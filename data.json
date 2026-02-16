@@ -1,0 +1,541 @@
+{
+  "personal": {
+    "name": "Asad Ali",
+    "title": "Full Stack Developer & IT Consultant",
+    "position": "Junior Programmer",
+    "organization": "University of Baltistan Skardu",
+    "location": "Gilgit Baltistan, Pakistan",
+    "phone": "+92 344 9113577",
+    "whatsapp": "+92 344 9113577",
+    "signal": "+92 344 9113577",
+    "emails": [
+      "info.alitechdev@gmail.com",
+      "asad07538@gmail.com"
+    ],
+    "linkedin": "https://www.linkedin.com/in/asad07538",
+    "portfolio": "https://infoalitech.github.io/",
+    "github": "https://github.com/infoalitech",
+    "upwork": "https://www.upwork.com/freelancers/~01a1b1c1d1e1f1a1b1",
+    "fiverr": "https://www.fiverr.com/asadali",
+    "shopware": "https://store.shopware.com",
+    "summary": "I am a passionate Web Developer with 5+ years of experience in designing and developing web applications, user interfaces, testing, debugging and have a keen interest in technology, mobile applications, and user experience. As a self-taught developer, I am hungry to learn and play with new stuff all the time.",
+    "stats": {
+      "experience": "5+",
+      "projects": "50+",
+      "clients": "30+"
+    }
+  },
+  "skills": {
+    "categories": [
+      {
+        "name": "Front End Development",
+        "skills": [
+          {"name": "React", "level": "Beginner", "icon": "fab fa-react"},
+          {"name": "React Native", "level": "Beginner", "icon": "fab fa-react"},
+          {"name": "Next.js", "level": "Intermediate", "icon": "fab fa-js"},
+          {"name": "Bootstrap", "level": "Expert", "icon": "fab fa-bootstrap"},
+          {"name": "HTML", "level": "Expert", "icon": "fab fa-html5"},
+          {"name": "CSS", "level": "Expert", "icon": "fab fa-css3-alt"},
+          {"name": "Tailwind CSS", "level": "Intermediate", "icon": "fas fa-palette"},
+          {"name": "JavaScript", "level": "Expert", "icon": "fab fa-js"},
+          {"name": "jQuery", "level": "Expert", "icon": "fas fa-code"},
+          {"name": "Android Studio", "level": "Beginner", "icon": "fab fa-android"}
+        ]
+      },
+      {
+        "name": "Backend Development",
+        "skills": [
+          {"name": "PHP", "level": "Expert", "icon": "fab fa-php"},
+          {"name": "Laravel", "level": "Expert", "icon": "fas fa-code"},
+          {"name": "Python", "level": "Expert", "icon": "fab fa-python"},
+          {"name": "Django", "level": "Beginner", "icon": "fab fa-python"},
+          {"name": "Flask", "level": "Beginner", "icon": "fab fa-python"},
+          {"name": "Node.js", "level": "Intermediate", "icon": "fab fa-node-js"},
+          {"name": "MySQL", "level": "Expert", "icon": "fas fa-database"},
+          {"name": "SQLite", "level": "Expert", "icon": "fas fa-database"}
+        ]
+      },
+      {
+        "name": "E-commerce Platforms",
+        "skills": [
+          {"name": "Shopware", "level": "Expert", "icon": "fas fa-shopping-cart"},
+          {"name": "Shopify", "level": "Intermediate", "icon": "fab fa-shopify"},
+          {"name": "JTL", "level": "Expert", "icon": "fas fa-store"},
+          {"name": "WordPress", "level": "Intermediate", "icon": "fab fa-wordpress"},
+          {"name": "Joomla", "level": "Expert", "icon": "fab fa-joomla"}
+        ]
+      },
+      {
+        "name": "Databases",
+        "skills": [
+          {"name": "MySQL", "level": "Expert", "icon": "fas fa-database"},
+          {"name": "SQLite", "level": "Expert", "icon": "fas fa-database"},
+          {"name": "Database Design", "level": "Expert", "icon": "fas fa-project-diagram"},
+          {"name": "Database Development", "level": "Expert", "icon": "fas fa-code"},
+          {"name": "Database Migration", "level": "Expert", "icon": "fas fa-exchange-alt"}
+        ]
+      },
+      {
+        "name": "Tools & Others",
+        "skills": [
+          {"name": "Git", "level": "Expert", "icon": "fab fa-git-alt"},
+          {"name": "Docker", "level": "Intermediate", "icon": "fab fa-docker"},
+          {"name": "AWS", "level": "Intermediate", "icon": "fab fa-aws"},
+          {"name": "Server Management", "level": "Expert", "icon": "fas fa-server"},
+          {"name": "API Development", "level": "Expert", "icon": "fas fa-network-wired"},
+          {"name": "MS Power BI", "level": "Intermediate", "icon": "fas fa-chart-line"},
+          {"name": "Figma to HTML", "level": "Expert", "icon": "fas fa-paint-brush"},
+          {"name": "PSD to HTML", "level": "Expert", "icon": "fas fa-file-image"},
+          {"name": "Pusher", "level": "Intermediate", "icon": "fas fa-comments"}
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "all": [
+      {
+        "id": "project-1",
+        "title": "Student Information System (SIS)",
+        "company": "University of Baltistan Skardu",
+        "category": "University Systems",
+        "description": "Comprehensive student management system handling admissions, enrollment, grades, and student records for University of Baltistan.",
+        "fullDescription": "A complete Student Information System built with PHP and Joomla that manages all aspects of student data including admissions, course registration, grade management, attendance tracking, and academic records. The system supports multiple user roles with different permissions for students, faculty, and administrators.",
+        "technologies": ["PHP", "Joomla", "MySQL", "JavaScript", "Bootstrap", "jQuery"],
+        "skills": ["PHP", "Joomla", "MySQL", "Bootstrap"],
+        "tags": ["University", "Management", "Joomla", "Education"],
+        "year": "2020",
+        "duration": "6 months",
+        "features": [
+          "Student Admissions Management",
+          "Course Registration System",
+          "Grade and Transcript Management",
+          "Attendance Tracking",
+          "Multi-role User System",
+          "Academic Calendar",
+          "Report Generation"
+        ],
+        "challenges": [
+          "Handling large student database efficiently",
+          "Integrating with existing university systems",
+          "Ensuring data security and privacy compliance"
+        ],
+        "liveUrl": "https://cssociety.uobs.edu.pk/",
+        "githubUrl": null,
+        "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=400&fit=crop"
+      },
+      {
+        "id": "project-2",
+        "title": "Learning Management System (LMS)",
+        "company": "University of Baltistan Skardu",
+        "category": "University Systems",
+        "description": "Online learning platform for courses, assignments, quizzes, and student-teacher interaction.",
+        "fullDescription": "A comprehensive Learning Management System built with Joomla that enables faculty to create courses, upload materials, conduct online assessments, and track student progress. Includes features for discussion forums, assignment submissions, and grade tracking.",
+        "technologies": ["PHP", "Joomla", "MySQL", "JavaScript"],
+        "skills": ["PHP", "Joomla", "MySQL", "JavaScript"],
+        "tags": ["Education", "E-learning", "LMS", "University"],
+        "year": "2020",
+        "duration": "5 months",
+        "features": [
+          "Course Creation and Management",
+          "Online Assessments and Quizzes",
+          "Assignment Submission System",
+          "Discussion Forums",
+          "Progress Tracking",
+          "Gradebook",
+          "Resource Sharing"
+        ],
+        "challenges": [
+          "Creating intuitive course creation tools",
+          "Handling file uploads and storage",
+          "Real-time grade calculation and reporting"
+        ],
+        "liveUrl": "https://cssociety.uobs.edu.pk/lms",
+        "githubUrl": null,
+        "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop"
+      },
+      {
+        "id": "project-3",
+        "title": "Accounts Management System",
+        "company": "University of Baltistan Skardu",
+        "category": "University Systems",
+        "description": "Fee and financial management system for university accounts department.",
+        "fullDescription": "A complete financial management system for handling university fees, payments, receipts, and financial reporting. Supports multiple payment methods, receipt generation, and automated fee reminders.",
+        "technologies": ["PHP", "Joomla", "MySQL", "Bootstrap"],
+        "skills": ["PHP", "Joomla", "MySQL", "Bootstrap"],
+        "tags": ["Finance", "University", "Accounts", "Payment"],
+        "year": "2020",
+        "duration": "4 months",
+        "features": [
+          "Fee Structure Management",
+          "Online Payment Integration",
+          "Receipt Generation",
+          "Financial Reports",
+          "Payment Reminders",
+          "Student Payment History",
+          "Multi-currency Support"
+        ],
+        "challenges": [
+          "Integrating multiple payment gateways",
+          "Ensuring financial data accuracy",
+          "Generating complex financial reports"
+        ],
+        "liveUrl": "https://cssociety.uobs.edu.pk/accounts",
+        "githubUrl": null,
+        "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop"
+      },
+      {
+        "id": "project-4",
+        "title": "Shopware 6 Theme Development",
+        "company": "eBakery",
+        "category": "E-commerce Solutions",
+        "description": "Custom Shopware 6 themes and plugins for various e-commerce stores.",
+        "fullDescription": "Developed custom Shopware 6 themes and plugins for multiple e-commerce clients. Created responsive designs, custom product configurators, and integrated third-party services.",
+        "technologies": ["Shopware", "PHP", "Twig", "JavaScript", "MySQL", "SCSS"],
+        "skills": ["Shopware", "PHP", "JavaScript", "CSS"],
+        "tags": ["E-commerce", "Shopware", "Themes", "Plugins"],
+        "year": "2021-2024",
+        "duration": "Ongoing",
+        "features": [
+          "Custom Theme Development",
+          "Product Configurators",
+          "Responsive Design",
+          "Performance Optimization",
+          "Third-party Integrations",
+          "Custom Checkout Process",
+          "Multi-language Support"
+        ],
+        "challenges": [
+          "Creating responsive designs for complex product displays",
+          "Optimizing store performance",
+          "Integrating with legacy systems"
+        ],
+        "liveUrl": "https://www.meingarten-shop.de/",
+        "githubUrl": null,
+        "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop"
+      },
+      {
+        "id": "project-5",
+        "title": "Hotel Management System",
+        "company": "Multiple Clients",
+        "category": "Web Applications",
+        "description": "Complete hotel booking and management platform with room reservations.",
+        "fullDescription": "A comprehensive hotel management system that handles room inventory, booking management, customer relationships, and payment processing. Features include room categorization, facility management, review systems, and integration with third-party booking platforms.",
+        "technologies": ["Laravel", "MySQL", "Bootstrap", "JavaScript", "Payment Gateway"],
+        "skills": ["Laravel", "MySQL", "Bootstrap", "JavaScript"],
+        "tags": ["Hospitality", "Booking", "Laravel", "Hotel"],
+        "year": "2022",
+        "duration": "3 months",
+        "features": [
+          "Room and Category Management",
+          "Online Booking System",
+          "Payment Processing",
+          "Review and Rating System",
+          "Customer Management",
+          "Booking Calendar",
+          "Email Notifications"
+        ],
+        "challenges": [
+          "Managing real-time room availability",
+          "Integrating multiple payment gateways",
+          "Handling peak season traffic"
+        ],
+        "liveUrl": "https://royalresortskardu.com",
+        "githubUrl": null,
+        "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=400&fit=crop"
+      },
+      {
+        "id": "project-6",
+        "title": "Scholarship Management System",
+        "company": "Marafie Foundation",
+        "category": "Web Applications",
+        "description": "Application and management system for scholarships and educational grants.",
+        "fullDescription": "A scholarship management platform that handles student applications, eligibility assessment, approval workflows, and fund distribution. Features multiple application categories, document upload, and comprehensive reporting for administrators.",
+        "technologies": ["Laravel", "Next.js", "MySQL", "API", "Bootstrap"],
+        "skills": ["Laravel", "Next.js", "MySQL", "API"],
+        "tags": ["Education", "Scholarship", "Laravel", "Next.js"],
+        "year": "2022",
+        "duration": "4 months",
+        "features": [
+          "Multi-category Application Forms",
+          "Document Upload and Verification",
+          "Eligibility Assessment",
+          "Approval Workflows",
+          "Fund Distribution Tracking",
+          "Comprehensive Reporting",
+          "Student Portal"
+        ],
+        "challenges": [
+          "Handling sensitive student data",
+          "Creating flexible approval workflows",
+          "Generating comprehensive reports"
+        ],
+        "liveUrl": "https://www.marafiepak.org/",
+        "githubUrl": null,
+        "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=400&fit=crop"
+      },
+      {
+        "id": "project-7",
+        "title": "Event Management System",
+        "company": "Sports Organizations",
+        "category": "Web Applications",
+        "description": "Sports event management system with player registration and match scheduling.",
+        "fullDescription": "A sports event management platform that handles player registration, team management, match scheduling, and result tracking. Supports both individual and team sports with flexible match creation and comprehensive result management.",
+        "technologies": ["Laravel", "MySQL", "Bootstrap", "JavaScript"],
+        "skills": ["Laravel", "MySQL", "Bootstrap", "JavaScript"],
+        "tags": ["Sports", "Events", "Laravel", "Management"],
+        "year": "2023",
+        "duration": "2 months",
+        "features": [
+          "Player and Team Registration",
+          "Match Scheduling and Creation",
+          "Result Management",
+          "Tournament Organization",
+          "Multi-sport Support",
+          "Real-time Updates",
+          "Statistics and Analytics"
+        ],
+        "challenges": [
+          "Managing complex tournament structures",
+          "Handling real-time match updates",
+          "Creating flexible scheduling systems"
+        ],
+        "liveUrl": null,
+        "githubUrl": null,
+        "image": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&h=400&fit=crop"
+      },
+      {
+        "id": "project-8",
+        "title": "Accounts Management System",
+        "company": "Marafie Foundation",
+        "category": "Web Applications",
+        "description": "Financial management system for organizations with comprehensive reporting.",
+        "fullDescription": "Enterprise-grade accounting system that handles complex financial operations including journal entries, payment processing, receipt management, and comprehensive financial reporting. Features project-wise and cost-center-wise reporting with advanced chart visualizations.",
+        "technologies": ["Laravel", "MySQL", "Charts.js", "Bootstrap", "JavaScript"],
+        "skills": ["Laravel", "MySQL", "Charts.js", "JavaScript"],
+        "tags": ["Finance", "Accounting", "Laravel", "Reports"],
+        "year": "2021",
+        "duration": "5 months",
+        "features": [
+          "Financial Year Management",
+          "Cost Center and Project Tracking",
+          "Journal Entries and Vouchers",
+          "Ledger Statements and Trial Balance",
+          "Income Statement and Balance Sheet",
+          "Advanced Reporting with Charts",
+          "Approval Workflows"
+        ],
+        "challenges": [
+          "Implementing complex accounting rules",
+          "Ensuring data accuracy and integrity",
+          "Creating comprehensive financial reports"
+        ],
+        "liveUrl": "https://www.marafiepak.org/accounts",
+        "githubUrl": null,
+        "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop"
+      }
+    ],
+    "companies": [
+      "University of Baltistan Skardu",
+      "eBakery",
+      "Multiple Clients",
+      "Marafie Foundation",
+      "Sports Organizations",
+      "Lamstan Technologies",
+      "Intouch Solutions"
+    ],
+    "categories": [
+      "University Systems",
+      "E-commerce Solutions",
+      "Web Applications",
+      "Mobile Applications",
+      "Management Systems"
+    ]
+  },
+  "experiences": [
+    {
+      "title": "Junior Programmer",
+      "company": "University of Baltistan Skardu",
+      "location": "Skardu, Pakistan",
+      "period": "June 2024 - Present",
+      "type": "Full-time",
+      "description": "Developing and maintaining university management systems including SIS, LMS, and other academic platforms. Responsible for system architecture, database design, and team coordination.",
+      "achievements": [
+        "Developed complete Student Information System",
+        "Implemented Learning Management System for online education",
+        "Created Accounts and Fee Management System",
+        "Integrated online payment systems"
+      ],
+      "technologies": ["PHP", "Joomla", "Laravel", "MySQL", "JavaScript", "Bootstrap"]
+    },
+    {
+      "title": "Senior Developer",
+      "company": "eBakery",
+      "location": "Remote",
+      "period": "September 2021 - August 2025",
+      "type": "Full-time",
+      "description": "Specialized in Shopware 6 development, creating custom themes, plugins, and e-commerce solutions for various clients across Germany and Europe.",
+      "achievements": [
+        "Developed 10+ custom Shopware 6 themes",
+        "Created 15+ plugins including product configurators",
+        "Implemented complex e-commerce solutions",
+        "Improved store performance by 40%"
+      ],
+      "technologies": ["Shopware", "PHP", "Twig", "JavaScript", "MySQL", "SCSS"]
+    },
+    {
+      "title": "CEO & Full Stack Developer",
+      "company": "Intouch Solutions Skardu",
+      "location": "Skardu, Pakistan",
+      "period": "February 2021 - June 2025",
+      "type": "Full-time",
+      "description": "Leading a team of developers and managing client projects across various domains including e-commerce, education, and enterprise solutions.",
+      "achievements": [
+        "Managed team of 5 developers",
+        "Completed 30+ client projects",
+        "Increased company revenue by 200%",
+        "Established partnerships with international clients"
+      ],
+      "technologies": ["PHP", "Laravel", "JavaScript", "MySQL", "Shopware", "React"]
+    },
+    {
+      "title": "Team Lead",
+      "company": "Lamstan Technologies",
+      "location": "Skardu, Pakistan",
+      "period": "March 2021 - September 2021",
+      "type": "Full-time",
+      "description": "Led development teams in creating various software solutions including lottery POS systems and real-time applications.",
+      "achievements": [
+        "Developed lottery POS system with real-time updates",
+        "Implemented RSS feed consumption system",
+        "Created real-time dashboard using Pusher",
+        "Mentored 3 junior developers"
+      ],
+      "technologies": ["Laravel", "JavaScript", "MySQL", "Pusher", "RSS", "WebSocket"]
+    },
+    {
+      "title": "Associate Staff",
+      "company": "University of Baltistan Skardu",
+      "location": "Skardu, Pakistan",
+      "period": "Semester Spring 2021",
+      "type": "Part-time",
+      "description": "Supported university IT department in maintaining systems and assisting faculty with technical issues.",
+      "achievements": [
+        "Maintained university websites",
+        "Provided technical support to faculty",
+        "Assisted in system documentation"
+      ],
+      "technologies": ["PHP", "Joomla", "MySQL", "HTML", "CSS"]
+    },
+    {
+      "title": "Research Associate",
+      "company": "University of Baltistan Skardu",
+      "location": "Skardu, Pakistan",
+      "period": "June 2020 - February 2021",
+      "type": "Full-time",
+      "description": "Conducted research in software development methodologies and contributed to academic projects.",
+      "achievements": [
+        "Published research on web development trends",
+        "Developed prototype systems for research",
+        "Assisted in academic paper writing"
+      ],
+      "technologies": ["Python", "Django", "MySQL", "Research"]
+    },
+    {
+      "title": "Intern",
+      "company": "University of Baltistan Skardu",
+      "location": "Skardu, Pakistan",
+      "period": "June 2018 - December 2018",
+      "type": "Internship",
+      "description": "Learned web development fundamentals and assisted in maintaining university systems.",
+      "achievements": [
+        "Learned PHP and MySQL",
+        "Assisted in website maintenance",
+        "Completed training in web development"
+      ],
+      "technologies": ["PHP", "HTML", "CSS", "MySQL"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "BSCS (Bachelor of Science in Computer Science)",
+      "institution": "University of Baltistan Skardu",
+      "location": "Skardu, Pakistan",
+      "period": "March 2016 - 2020",
+      "achievement": "Gold Medalist",
+      "details": [
+        "Specialized in Software Engineering",
+        "Final Year Project: Travel Management System",
+        "CGPA: 3.8/4.0"
+      ]
+    },
+    {
+      "degree": "Intermediate (ICS - Computer Science)",
+      "institution": "USWA Boys Public School and College Skardu",
+      "location": "Skardu, Pakistan",
+      "period": "2014 - 2015",
+      "details": [
+        "Major: Computer Science",
+        "Grade: A+"
+      ]
+    },
+    {
+      "degree": "Matriculation (Science)",
+      "institution": "Al Salam Public School Skardu",
+      "location": "Skardu, Pakistan",
+      "period": "2011 - 2012",
+      "details": [
+        "Major: Science",
+        "Grade: A+"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Introduction to Artificial Intelligence",
+      "issuer": "Coursera",
+      "year": "2020",
+      "credentialId": "CERT-12345"
+    },
+    {
+      "name": "Web Development Bootcamp",
+      "issuer": "Udemy",
+      "year": "2019",
+      "credentialId": "UDEMY-67890"
+    },
+    {
+      "name": "PHP & MySQL Certification",
+      "issuer": "Codecademy",
+      "year": "2018",
+      "credentialId": "CODE-54321"
+    }
+  ],
+  "achievements": [
+    "Gold Medalist - University of Baltistan Skardu (2020)",
+    "Best Final Year Project Award (2020)",
+    "Completed 50+ successful projects",
+    "30+ satisfied clients worldwide",
+    "Published research papers in university journal"
+  ],
+  "languages": [
+    {"name": "English", "level": "Fluent"},
+    {"name": "Urdu", "level": "Native"},
+    {"name": "Shina", "level": "Native"},
+    {"name": "Arabic", "level": "Basic"}
+  ],
+  "references": [
+    {
+      "name": "Dr. Muhammad Ali",
+      "position": "Head of Computer Science Department",
+      "organization": "University of Baltistan Skardu",
+      "email": "m.ali@uobs.edu.pk",
+      "phone": "+92 300 1234567"
+    },
+    {
+      "name": "John Smith",
+      "position": "Project Manager",
+      "organization": "eBakery Germany",
+      "email": "john.smith@ebakery.de",
+      "phone": "+49 123 456789"
+    }
+  ]
+}

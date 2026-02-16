@@ -3,181 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Morgan - Full Stack Developer</title>
+    <title>Asad Ali - Full Stack Developer & IT Consultant</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            box-sizing: border-box;
-        }
-        
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
         
         * {
             font-family: 'Inter', sans-serif;
         }
         
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --dark: #0f172a;
+            --light-dark: #1e293b;
+            --text: #e2e8f0;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+        
         .gradient-bg {
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
         }
         
         .gradient-text {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.1);
+        .dark-glass {
+            background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .card-hover {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
         }
         
         .card-hover:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
         
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(60px);
-            animation: fadeInUp 1s ease-out forwards;
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
         }
         
-        .fade-in-left {
-            opacity: 0;
-            transform: translateX(-60px);
-            animation: fadeInLeft 1s ease-out forwards;
-        }
-        
-        .fade-in-right {
-            opacity: 0;
-            transform: translateX(60px);
-            animation: fadeInRight 1s ease-out forwards;
-        }
-        
-        .scale-in {
-            opacity: 0;
-            transform: scale(0.8);
-            animation: scaleIn 1s ease-out forwards;
-        }
-        
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInLeft {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes fadeInRight {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes scaleIn {
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        
-        .stagger-1 { animation-delay: 0.1s; }
-        .stagger-2 { animation-delay: 0.2s; }
-        .stagger-3 { animation-delay: 0.3s; }
-        .stagger-4 { animation-delay: 0.4s; }
-        .stagger-5 { animation-delay: 0.5s; }
-        .stagger-6 { animation-delay: 0.6s; }
-        
-        .floating {
-            animation: floating 6s ease-in-out infinite;
-        }
-        
-        @keyframes floating {
+        @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
         }
         
-        .typing-animation {
-            overflow: hidden;
-            border-right: 3px solid #667eea;
-            white-space: nowrap;
-            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-        }
-        
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: #667eea; }
-        }
-        
         .skill-bar {
-            position: relative;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            height: 8px;
+            border-radius: 4px;
             overflow: hidden;
         }
         
         .skill-progress {
-            height: 8px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            border-radius: 10px;
-            transform: scaleX(0);
-            transform-origin: left;
-            animation: fillBar 2s ease-out forwards;
-        }
-        
-        @keyframes fillBar {
-            to { transform: scaleX(1); }
-        }
-        
-        .project-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
-            opacity: 0;
-            transition: all 0.4s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .project-card:hover .project-overlay {
-            opacity: 1;
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 1.5s ease-in-out;
         }
         
         .nav-link {
             position: relative;
-            transition: all 0.3s ease;
         }
         
         .nav-link::after {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             transition: width 0.3s ease;
         }
         
@@ -185,1418 +94,1489 @@
             width: 100%;
         }
         
-        .parallax {
-            transform: translateZ(0);
-            transition: transform 0.1s ease-out;
-        }
-        
         .modal {
             display: none;
             position: fixed;
-            z-index: 1000;
-            left: 0;
             top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 20px;
         }
         
         .modal.active {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
-            animation: fadeIn 0.3s ease-out;
         }
         
         .modal-content {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            border-radius: 20px;
-            max-width: 90vw;
+            background: var(--light-dark);
+            border-radius: 16px;
+            width: 100%;
+            max-width: 1000px;
             max-height: 90vh;
             overflow-y: auto;
+            animation: modalSlideUp 0.3s ease;
             position: relative;
-            animation: slideUp 0.3s ease-out;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        @keyframes modalSlideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .project-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin: 2px;
+        }
+        
+        .tech-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
         }
         
         @keyframes fadeIn {
-            from { opacity: 0; }
             to { opacity: 1; }
         }
         
-        @keyframes slideUp {
-            from { 
-                opacity: 0;
-                transform: translateY(50px) scale(0.9);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        .delay-5 { animation-delay: 1s; }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
         }
         
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: white;
-            font-size: 24px;
-            width: 40px;
-            height: 40px;
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-10px) translateX(-50%); }
+            60% { transform: translateY(-5px) translateX(-50%); }
+        }
+        
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.1);
+            border-top-color: var(--primary);
             border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            z-index: 10;
+            animation: spin 1s linear infinite;
         }
         
-        .close-modal:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.1);
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
         
-        .video-container {
-            position: relative;
-            width: 100%;
-            height: 0;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            background: #000;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .video-placeholder {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 18px;
-        }
-        
-        .tech-tag {
-            display: inline-block;
-            padding: 6px 12px;
-            margin: 4px;
+        .filter-btn {
+            padding: 8px 16px;
             border-radius: 20px;
-            font-size: 14px;
+            font-size: 0.875rem;
             font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .filter-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-color: transparent;
+        }
+        
+        .project-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .skill-filter-btn {
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .skill-filter-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+        
+        .skill-filter-btn.active {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-color: transparent;
+        }
+        
+        .company-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Custom scrollbar */
+        .modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .modal-content::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+        
+        .modal-content::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 4px;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .no-results i {
+            font-size: 64px;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white overflow-x-hidden">
-    <!-- Navigation -->
-    <nav class="fixed w-full top-0 z-50 glass-effect">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="text-2xl font-bold gradient-text">AM</div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link text-gray-300 hover:text-white">Home</a>
-                    <a href="#about" class="nav-link text-gray-300 hover:text-white">About</a>
-                    <a href="#skills" class="nav-link text-gray-300 hover:text-white">Skills</a>
-                    <a href="#projects" class="nav-link text-gray-300 hover:text-white">Projects</a>
-                    <a href="#contact" class="nav-link text-gray-300 hover:text-white">Contact</a>
-                </div>
-                <button id="mobile-menu-btn" class="md:hidden text-white">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden glass-effect">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#home" class="block px-3 py-2 text-gray-300 hover:text-white">Home</a>
-                <a href="#about" class="block px-3 py-2 text-gray-300 hover:text-white">About</a>
-                <a href="#skills" class="block px-3 py-2 text-gray-300 hover:text-white">Skills</a>
-                <a href="#projects" class="block px-3 py-2 text-gray-300 hover:text-white">Projects</a>
-                <a href="#contact" class="block px-3 py-2 text-gray-300 hover:text-white">Contact</a>
-            </div>
-        </div>
-    </nav>
+<body class="bg-slate-900 text-slate-100">
+    <!-- Loading Screen -->
+    <div id="loading" class="loading">
+        <div class="spinner"></div>
+    </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="gradient-bg min-h-screen flex items-center justify-center relative overflow-hidden">
-        <!-- Animated Background Elements -->
-        <div class="absolute inset-0">
-            <div class="floating absolute top-20 left-10 w-20 h-20 bg-purple-500 rounded-full opacity-20"></div>
-            <div class="floating absolute top-40 right-20 w-16 h-16 bg-blue-500 rounded-full opacity-20" style="animation-delay: 2s;"></div>
-            <div class="floating absolute bottom-20 left-20 w-12 h-12 bg-indigo-500 rounded-full opacity-20" style="animation-delay: 4s;"></div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Left Side - Text Content -->
-                <div class="text-center lg:text-left">
-                    <div class="fade-in-up">
-                        <h1 class="text-5xl md:text-7xl font-bold mb-6">
-                            <span class="gradient-text">Asad Ali</span>
-                        </h1>
-                    </div>
-                    <div class="fade-in-up stagger-1">
-                        <div class="typing-animation text-2xl md:text-3xl text-gray-300 mb-6 inline-block">
-                            Full Stack Developer & IT Consultant
-                        </div>
-                    </div>
-                    <div class="fade-in-up stagger-2">
-                        <p class="text-lg text-gray-400 mb-8 max-w-xl">
-                            Transforming ideas into powerful digital solutions. Specialized in modern web technologies, cloud infrastructure, and enterprise-grade applications.
-                        </p>
+    <!-- Main Content (initially hidden) -->
+    <div id="mainContent" style="display: none;">
+        <!-- Navigation -->
+        <nav class="fixed w-full top-0 z-50 dark-glass py-4">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="flex justify-between items-center">
+                    <a href="#home" class="text-2xl font-bold gradient-text">AA</a>
+                    
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex space-x-8">
+                        <a href="#home" class="nav-link">Home</a>
+                        <a href="#about" class="nav-link">About</a>
+                        <a href="#skills" class="nav-link">Skills</a>
+                        <a href="#projects" class="nav-link">Projects</a>
+                        <a href="#experience" class="nav-link">Experience</a>
+                        <a href="#contact" class="nav-link">Contact</a>
+                        <a href="./cv.html" class="gradient-bg px-4 py-2 rounded-lg font-medium hover:opacity-90 transition">View CV</a>
                     </div>
                     
-                    <!-- Quick Skills Overview -->
-                    <div class="fade-in-up stagger-3 mb-8">
-                        <div class="flex flex-wrap gap-3 justify-center lg:justify-start">
-                            <span class="px-4 py-2 bg-blue-600/20 border border-blue-500/30 rounded-full text-blue-300 text-sm">React & Next.js</span>
-                            <span class="px-4 py-2 bg-green-600/20 border border-green-500/30 rounded-full text-green-300 text-sm">Node.js</span>
-                            <span class="px-4 py-2 bg-purple-600/20 border border-purple-500/30 rounded-full text-purple-300 text-sm">Python</span>
-                            <span class="px-4 py-2 bg-yellow-600/20 border border-yellow-500/30 rounded-full text-yellow-300 text-sm">AWS</span>
-                            <span class="px-4 py-2 bg-indigo-600/20 border border-indigo-500/30 rounded-full text-indigo-300 text-sm">Docker</span>
-                            <span class="px-4 py-2 bg-red-600/20 border border-red-500/30 rounded-full text-red-300 text-sm">MongoDB</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Stats -->
-                    <div class="fade-in-up stagger-4 grid grid-cols-3 gap-6 mb-8">
-                        <div class="text-center">
-                            <div class="text-2xl font-bold gradient-text">5+</div>
-                            <div class="text-sm text-gray-400">Years Experience</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-2xl font-bold gradient-text">50+</div>
-                            <div class="text-sm text-gray-400">Projects Done</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-2xl font-bold gradient-text">30+</div>
-                            <div class="text-sm text-gray-400">Happy Clients</div>
-                        </div>
-                    </div>
-                    
-                    <div class="fade-in-up stagger-5 space-x-6">
-                        <button onclick="scrollToSection('projects')" class="bg-gradient-to-r from-purple-600 to-blue-600 px-8 py-4 rounded-full font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                            View My Work
-                        </button>
-                        <button onclick="scrollToSection('contact')" class="border-2 border-purple-600 px-8 py-4 rounded-full font-semibold hover:bg-purple-600 transition-all duration-300">
-                            Get In Touch
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Right Side - Profile Image -->
-                <div class="fade-in-right flex justify-center lg:justify-end">
-                    <div class="relative">
-                        <!-- Main Profile Image -->
-                        <div class="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-gradient-to-r from-purple-600 to-blue-600 p-1">
-                            <div class="w-full h-full rounded-full overflow-hidden bg-gray-800">
-                                <img src="https://infoalitech.github.io/assets/img/asad.png" 
-                                     alt="Asad Ali - Full Stack Developer" 
-                                     class="w-full h-full object-cover object-center"
-                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                <!-- Fallback if image fails to load -->
-                                <div class="w-full h-full bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center" style="display: none;">
-                                    <svg class="w-32 h-32 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Floating Tech Icons -->
-                        <div class="absolute -top-4 -right-4 w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center floating shadow-lg">
-                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path>
-                            </svg>
-                        </div>
-                        
-                        <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-green-600 rounded-full flex items-center justify-center floating shadow-lg" style="animation-delay: 2s;">
-                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
-                        
-                        <div class="absolute top-1/2 -left-8 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center floating shadow-lg" style="animation-delay: 4s;">
-                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 fade-in-up stagger-6">
-            <div class="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-                <div class="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-bounce"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="fade-in-left">
-                    <h2 class="text-5xl font-bold mb-8">
-                        About <span class="gradient-text">Me</span>
-                    </h2>
-                    <p class="text-xl text-gray-300 mb-6 leading-relaxed">
-                        I'm a passionate full-stack developer with 5+ years of experience creating digital solutions that make a difference. I specialize in modern web technologies and love turning complex problems into simple, beautiful designs.
-                    </p>
-                    <p class="text-lg text-gray-400 mb-8 leading-relaxed">
-                        When I'm not coding, you'll find me exploring new technologies, contributing to open source projects, or sharing knowledge with the developer community.
-                    </p>
-                    
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="text-center">
-                            <div class="text-3xl font-bold gradient-text mb-2">50+</div>
-                            <div class="text-gray-400">Projects Completed</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold gradient-text mb-2">5+</div>
-                            <div class="text-gray-400">Years Experience</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold gradient-text mb-2">30+</div>
-                            <div class="text-gray-400">Happy Clients</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold gradient-text mb-2">24/7</div>
-                            <div class="text-gray-400">Availability</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="fade-in-right">
-                    <div class="relative">
-                        <div class="w-80 h-80 mx-auto bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
-                            <svg class="w-40 h-40 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                            </svg>
-                        </div>
-                        <div class="absolute -top-4 -right-4 w-20 h-20 bg-yellow-400 rounded-full flex items-center justify-center floating">
-                            <svg class="w-10 h-10 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- View More Button -->
-                <div class="text-center mt-12 fade-in-up stagger-4">
-                    <button onclick="openSkillsModal()" class="bg-gradient-to-r from-purple-600 to-blue-600 px-8 py-4 rounded-full font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                        View More Skills
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" class="md:hidden text-2xl">
+                        <i class="fas fa-bars"></i>
                     </button>
                 </div>
+                
+                <!-- Mobile Navigation -->
+                <div id="mobileMenu" class="md:hidden hidden mt-4 space-y-4">
+                    <a href="#home" class="block py-2">Home</a>
+                    <a href="#about" class="block py-2">About</a>
+                    <a href="#skills" class="block py-2">Skills</a>
+                    <a href="#projects" class="block py-2">Projects</a>
+                    <a href="#experience" class="block py-2">Experience</a>
+                    <a href="#contact" class="block py-2">Contact</a>
+                    <button href="./cv.html" class="gradient-bg w-full py-3 rounded-lg font-medium">View CV</button>
+                </div>
             </div>
-        </div>
-    </section>
+        </nav>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold mb-6 fade-in-up">
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center pt-20 relative overflow-hidden">
+            <!-- Background Elements -->
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute top-1/4 left-1/4 w-64 h-64 gradient-bg rounded-full opacity-10 animate-float"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-96 h-96 gradient-bg rounded-full opacity-5 animate-float" style="animation-delay: 2s;"></div>
+                <div class="absolute top-3/4 left-3/4 w-32 h-32 gradient-bg rounded-full opacity-10 animate-float" style="animation-delay: 4s;"></div>
+            </div>
+            
+            <div class="container mx-auto px-4 md:px-8 relative z-10">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Left Column - Text -->
+                    <div class="text-center md:text-left">
+                        <div class="fade-in">
+                            <h1 id="heroName" class="text-4xl md:text-6xl font-bold mb-4">
+                                <!-- Name will be inserted here -->
+                            </h1>
+                        </div>
+                        
+                        <div class="fade-in delay-1">
+                            <h2 id="heroTitle" class="text-2xl md:text-3xl text-slate-300 mb-6">
+                                <!-- Title will be inserted here -->
+                            </h2>
+                        </div>
+                        
+                        <div class="fade-in delay-2 mb-8">
+                            <p id="heroDescription" class="text-lg text-slate-400 max-w-xl">
+                                <!-- Description will be inserted here -->
+                            </p>
+                        </div>
+                        
+                        <!-- Quick Stats -->
+                        <div class="fade-in delay-3 grid grid-cols-3 gap-4 mb-8" id="statsContainer">
+                            <!-- Stats will be inserted here -->
+                        </div>
+                        
+                        <!-- Tech Stack Highlights -->
+                        <div class="fade-in delay-4 mb-8" id="techHighlights">
+                            <!-- Tech highlights will be inserted here -->
+                        </div>
+                        
+                        <!-- CTA Buttons -->
+                        <div class="fade-in delay-5 flex flex-wrap gap-4 justify-center md:justify-start">
+                            <button onclick="scrollToSection('projects')" class="gradient-bg px-6 py-3 rounded-lg font-medium hover:opacity-90 transition">
+                                View My Work
+                            </button>
+                            <button onclick="scrollToSection('contact')" class="border border-slate-600 px-6 py-3 rounded-lg font-medium hover:bg-slate-800 transition">
+                                Get In Touch
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column - Profile Image -->
+                    <div class="fade-in flex justify-center md:justify-end">
+                        <div class="relative">
+                            <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-transparent gradient-bg p-1">
+                                <div class="w-full h-full rounded-full overflow-hidden bg-slate-800">
+                                    <!-- Profile Image Placeholder -->
+                                    <div class="w-full h-full bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center">
+                                        <div class="text-center">
+                                            <i class="fas fa-user text-6xl text-slate-500 mb-4"></i>
+                                            <p id="profileName" class="text-slate-400"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Floating Tech Icons -->
+                            <div class="absolute -top-4 -left-4 w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center shadow-lg animate-float">
+                                <i class="fab fa-react text-white text-2xl"></i>
+                            </div>
+                            <div class="absolute -bottom-4 -right-4 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg animate-float" style="animation-delay: 1s;">
+                                <i class="fab fa-node-js text-white text-2xl"></i>
+                            </div>
+                            <div class="absolute top-1/2 -right-8 w-14 h-14 bg-purple-500 rounded-full flex items-center justify-center shadow-lg animate-float" style="animation-delay: 2s;">
+                                <i class="fab fa-python text-white text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="scroll-down">
+                <a href="#about" class="text-slate-400">
+                    <i class="fas fa-chevron-down text-2xl"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-slate-800">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Left Column - Image/Illustration -->
+                    <div class="fade-in">
+                        <div class="relative">
+                            <div class="w-full h-80 bg-gradient-to-br from-slate-700 to-slate-900 rounded-2xl flex items-center justify-center">
+                                <div class="text-center">
+                                    <i class="fas fa-code text-8xl text-slate-600 mb-4"></i>
+                                    <p class="text-slate-500">Full Stack Developer</p>
+                                </div>
+                            </div>
+                            <div class="absolute -bottom-6 -right-6 w-32 h-32 gradient-bg rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fas fa-laptop-code text-white text-4xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column - Text -->
+                    <div class="fade-in delay-1">
+                        <h2 class="text-4xl font-bold mb-6">
+                            About <span class="gradient-text">Me</span>
+                        </h2>
+                        
+                        <p id="aboutSummary" class="text-lg text-slate-300 mb-6">
+                            <!-- Summary will be inserted here -->
+                        </p>
+                        
+                        <!-- Personal Info -->
+                        <div class="space-y-4 mb-8" id="personalInfo">
+                            <!-- Personal info will be inserted here -->
+                        </div>
+                        
+                        <!-- Education -->
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-bold mb-4 gradient-text">Education</h3>
+                            <div id="educationList">
+                                <!-- Education will be inserted here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-slate-900">
+            <div class="container mx-auto px-4 md:px-8">
+                <h2 class="text-4xl font-bold text-center mb-12">
                     My <span class="gradient-text">Skills</span>
                 </h2>
-                <p class="text-xl text-gray-400 max-w-2xl mx-auto fade-in-up stagger-1">
-                    Technologies and tools I use to bring ideas to life
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Frontend Skills -->
-                <div class="glass-effect p-8 rounded-2xl card-hover fade-in-up stagger-1">
-                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Frontend</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>React/Next.js</span>
-                                <span>95%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%; animation-delay: 0.5s;"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>TypeScript</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%; animation-delay: 0.7s;"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>Tailwind CSS</span>
-                                <span>95%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%; animation-delay: 0.9s;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Backend Skills -->
-                <div class="glass-effect p-8 rounded-2xl card-hover fade-in-up stagger-2">
-                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Backend</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>Node.js</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%; animation-delay: 1.1s;"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>Python</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%; animation-delay: 1.3s;"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>PostgreSQL</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%; animation-delay: 1.5s;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tools & Others -->
-                <div class="glass-effect p-8 rounded-2xl card-hover fade-in-up stagger-3">
-                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Tools & DevOps</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>Docker</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%; animation-delay: 1.7s;"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>AWS</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%; animation-delay: 1.9s;"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>Git</span>
-                                <span>95%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%; animation-delay: 2.1s;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 
-                <!-- View More Button -->
-                <div class="text-center mt-12 fade-in-up stagger-4">
-                    <button onclick="openSkillsModal()" class="bg-gradient-to-r from-purple-600 to-blue-600 px-8 py-4 rounded-full font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                        View More Skills
-                    </button>
-                </div>
+                <!-- Skills will be loaded here -->
+                <div id="skillsContainer"></div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold mb-6 fade-in-up">
-                    Featured <span class="gradient-text">Projects</span>
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-slate-800">
+            <div class="container mx-auto px-4 md:px-8">
+                <h2 class="text-4xl font-bold text-center mb-8">
+                    My <span class="gradient-text">Projects</span>
                 </h2>
-                <p class="text-xl text-gray-400 max-w-2xl mx-auto fade-in-up stagger-1">
-                    A showcase of my recent work and creative solutions
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="project-card relative bg-gray-900 rounded-2xl overflow-hidden card-hover fade-in-up stagger-1">
-                    <div class="h-48 bg-gradient-to-br from-blue-600 to-purple-700 flex items-center justify-center">
-                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-                        </svg>
-                    </div>
-                    <div class="project-overlay">
-                        <div class="text-center">
-                            <button onclick="openProjectModal('project1')" class="bg-white text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
-                                View Project
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-3">E-Commerce Platform</h3>
-                        <p class="text-gray-400 mb-4">Full-stack e-commerce solution with React, Node.js, and Stripe integration.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-600 text-white text-sm rounded-full">React</span>
-                            <span class="px-3 py-1 bg-green-600 text-white text-sm rounded-full">Node.js</span>
-                            <span class="px-3 py-1 bg-purple-600 text-white text-sm rounded-full">MongoDB</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card relative bg-gray-900 rounded-2xl overflow-hidden card-hover fade-in-up stagger-2">
-                    <div class="h-48 bg-gradient-to-br from-green-600 to-teal-700 flex items-center justify-center">
-                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                        </svg>
-                    </div>
-                    <div class="project-overlay">
-                        <div class="text-center">
-                            <button onclick="openProjectModal('project2')" class="bg-white text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
-                                View Project
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-3">Analytics Dashboard</h3>
-                        <p class="text-gray-400 mb-4">Real-time data visualization dashboard with interactive charts and insights.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-600 text-white text-sm rounded-full">Vue.js</span>
-                            <span class="px-3 py-1 bg-yellow-600 text-white text-sm rounded-full">D3.js</span>
-                            <span class="px-3 py-1 bg-red-600 text-white text-sm rounded-full">Python</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card relative bg-gray-900 rounded-2xl overflow-hidden card-hover fade-in-up stagger-3">
-                    <div class="h-48 bg-gradient-to-br from-purple-600 to-pink-700 flex items-center justify-center">
-                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a1 1 0 001-1V4a1 1 0 00-1-1H8a1 1 0 00-1 1v16a1 1 0 001 1z"></path>
-                        </svg>
-                    </div>
-                    <div class="project-overlay">
-                        <div class="text-center">
-                            <button onclick="openProjectModal('project3')" class="bg-white text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
-                                View Project
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-3">Task Management App</h3>
-                        <p class="text-gray-400 mb-4">Collaborative task management with real-time updates and team features.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-600 text-white text-sm rounded-full">React Native</span>
-                            <span class="px-3 py-1 bg-orange-600 text-white text-sm rounded-full">Firebase</span>
-                            <span class="px-3 py-1 bg-indigo-600 text-white text-sm rounded-full">Redux</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card relative bg-gray-900 rounded-2xl overflow-hidden card-hover fade-in-up stagger-4">
-                    <div class="h-48 bg-gradient-to-br from-orange-600 to-red-700 flex items-center justify-center">
-                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"></path>
-                        </svg>
-                    </div>
-                    <div class="project-overlay">
-                        <div class="text-center">
-                            <button onclick="openProjectModal('project4')" class="bg-white text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
-                                View Project
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-3">Cloud Storage Solution</h3>
-                        <p class="text-gray-400 mb-4">Secure file storage and sharing platform with advanced permissions.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-yellow-600 text-white text-sm rounded-full">AWS</span>
-                            <span class="px-3 py-1 bg-blue-600 text-white text-sm rounded-full">Docker</span>
-                            <span class="px-3 py-1 bg-green-600 text-white text-sm rounded-full">Kubernetes</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="project-card relative bg-gray-900 rounded-2xl overflow-hidden card-hover fade-in-up stagger-5">
-                    <div class="h-48 bg-gradient-to-br from-indigo-600 to-blue-700 flex items-center justify-center">
-                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-                        </svg>
-                    </div>
-                    <div class="project-overlay">
-                        <div class="text-center">
-                            <button onclick="openProjectModal('project5')" class="bg-white text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
-                                View Project
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-3">AI Chat Assistant</h3>
-                        <p class="text-gray-400 mb-4">Intelligent chatbot with natural language processing and machine learning.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-green-600 text-white text-sm rounded-full">Python</span>
-                            <span class="px-3 py-1 bg-blue-600 text-white text-sm rounded-full">TensorFlow</span>
-                            <span class="px-3 py-1 bg-purple-600 text-white text-sm rounded-full">FastAPI</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="project-card relative bg-gray-900 rounded-2xl overflow-hidden card-hover fade-in-up stagger-6">
-                    <div class="h-48 bg-gradient-to-br from-teal-600 to-cyan-700 flex items-center justify-center">
-                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                        </svg>
-                    </div>
-                    <div class="project-overlay">
-                        <div class="text-center">
-                            <button onclick="openProjectModal('project6')" class="bg-white text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
-                                View Project
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-3">Learning Platform</h3>
-                        <p class="text-gray-400 mb-4">Interactive online learning platform with video streaming and progress tracking.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-red-600 text-white text-sm rounded-full">Angular</span>
-                            <span class="px-3 py-1 bg-blue-600 text-white text-sm rounded-full">NestJS</span>
-                            <span class="px-3 py-1 bg-green-600 text-white text-sm rounded-full">PostgreSQL</span>
-                        </div>
-                    </div>
-                </div>
                 
-                <!-- View More Button -->
-                <div class="text-center mt-12 fade-in-up stagger-4">
-                    <button onclick="openSkillsModal()" class="bg-gradient-to-r from-purple-600 to-blue-600 px-8 py-4 rounded-full font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                        View More Skills
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 gradient-bg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold mb-6 fade-in-up">
-                    Let's <span class="gradient-text">Connect</span>
-                </h2>
-                <p class="text-xl text-gray-300 max-w-2xl mx-auto fade-in-up stagger-1">
-                    Ready to bring your ideas to life? Let's discuss your next project.
-                </p>
-            </div>
-            
-            <div class="max-w-4xl mx-auto">
-                <div class="fade-in-up grid md:grid-cols-3 gap-8 text-center">
-                    <div class="glass-effect p-8 rounded-2xl">
-                        <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                            </svg>
+                <!-- Projects Filter Section -->
+                <div class="mb-12">
+                    <!-- Company Filter -->
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-4 text-center md:text-left">Filter by Company</h3>
+                        <div id="companyFilters" class="flex flex-wrap gap-2 justify-center md:justify-start">
+                            <!-- Company filter buttons will be inserted here -->
                         </div>
-                        <h4 class="text-xl font-semibold mb-2">Email</h4>
-                        <p class="text-gray-400">alex.morgan@example.com</p>
                     </div>
                     
-                    <div class="glass-effect p-8 rounded-2xl">
-                        <div class="w-16 h-16 bg-gradient-to-br from-green-600 to-teal-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                            </svg>
+                    <!-- Skill Filter -->
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-4 text-center md:text-left">Filter by Technology</h3>
+                        <div id="skillFilters" class="flex flex-wrap gap-2 justify-center md:justify-start">
+                            <!-- Skill filter buttons will be inserted here -->
                         </div>
-                        <h4 class="text-xl font-semibold mb-2">Phone</h4>
-                        <p class="text-gray-400">+1 (555) 123-4567</p>
                     </div>
                     
-                    <div class="glass-effect p-8 rounded-2xl">
-                        <div class="w-16 h-16 bg-gradient-to-br from-orange-600 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            </svg>
+                    <!-- Category Filter -->
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-4 text-center md:text-left">Filter by Category</h3>
+                        <div id="categoryFilters" class="flex flex-wrap gap-2 justify-center md:justify-start">
+                            <!-- Category filter buttons will be inserted here -->
                         </div>
-                        <h4 class="text-xl font-semibold mb-2">Location</h4>
-                        <p class="text-gray-400">San Francisco, CA</p>
+                    </div>
+                    
+                    <!-- Active Filters & Clear -->
+                    <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+                        <div id="activeFilters" class="flex flex-wrap gap-2">
+                            <!-- Active filters will be shown here -->
+                        </div>
+                        <button onclick="clearAllFilters()" class="text-slate-400 hover:text-white text-sm">
+                            <i class="fas fa-times mr-1"></i> Clear all filters
+                        </button>
                     </div>
                 </div>
                 
-                <div class="text-center pt-12 fade-in-up stagger-1">
-                    <h4 class="text-2xl font-semibold mb-6">Follow Me</h4>
-                    <div class="flex justify-center space-x-6">
-                        <a href="#" class="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center hover:scale-110 transition-transform">
-                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="w-16 h-16 bg-gradient-to-br from-blue-700 to-blue-800 rounded-xl flex items-center justify-center hover:scale-110 transition-transform">
-                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-800 rounded-xl flex items-center justify-center hover:scale-110 transition-transform">
-                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                        </a>
-                    </div>
+                <!-- Projects Grid -->
+                <div id="projectsContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Projects will be loaded here -->
                 </div>
                 
-                <!-- View More Button -->
-                <div class="text-center mt-12 fade-in-up stagger-4">
-                    <button onclick="openSkillsModal()" class="bg-gradient-to-r from-purple-600 to-blue-600 px-8 py-4 rounded-full font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                        View More Skills
-                    </button>
+                <!-- No Results Message -->
+                <div id="noResults" class="no-results hidden">
+                    <i class="fas fa-search"></i>
+                    <h3 class="text-2xl font-bold mb-2">No projects found</h3>
+                    <p class="text-slate-400">Try adjusting your filters to see more results.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Modal -->
-    <div id="skillsModal" class="modal">
-        <div class="modal-content w-full max-w-6xl mx-4">
-            <button class="close-modal" onclick="closeSkillsModal()">×</button>
-            <div class="p-8">
-                <div class="text-center mb-8">
-                    <h2 class="text-4xl font-bold mb-4">
-                        Complete <span class="gradient-text">Skill Set</span>
-                    </h2>
-                    <p class="text-xl text-gray-400">
-                        Comprehensive overview of my technical expertise and proficiency levels
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 bg-slate-900">
+            <div class="container mx-auto px-4 md:px-8">
+                <h2 class="text-4xl font-bold text-center mb-12">
+                    Work <span class="gradient-text">Experience</span>
+                </h2>
+                
+                <!-- Experience timeline will be loaded here -->
+                <div id="experienceContainer"></div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 gradient-bg">
+            <div class="container mx-auto px-4 md:px-8">
+                <h2 class="text-4xl font-bold text-center mb-12">
+                    Get In <span class="text-white">Touch</span>
+                </h2>
+                
+                <div class="max-w-4xl mx-auto">
+                    <div >
+                        <!-- Contact Info -->
+                        <div class="dark-glass p-8 rounded-2xl">
+                            <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                            <div id="contactInfo">
+                                <!-- Contact info will be inserted here -->
+                            </div>
+                    <!-- Social Links -->
+                    <div class="mt-8" >
+                        <h4 class="text-xl text-center font-bold mb-4">Connect with me</h4>
+                        <div class="flex justify-center space-x-4"> 
+                           <a href="#" id="linkedinLink" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition">
+                                <i class="fab fa-linkedin-in text-white"></i>
+                            </a>
+                            <a href="#" id="githubLink" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-900 transition">
+                                <i class="fab fa-github text-white"></i>
+                            </a>
+                            <a href="#" id="portfolioLink" class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                <i class="fas fa-globe text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-slate-900 py-8">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="text-center">
+                    <p class="text-slate-400 mb-4">
+                        © <span id="currentYear"></span> Asad Ali. All rights reserved.
+                    </p>
+                    <p class="text-slate-500 text-sm">
+                        Crafted with ❤️ and lots of ☕
                     </p>
                 </div>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Programming Languages -->
-                    <div class="glass-effect p-6 rounded-xl">
-                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633z" clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-lg font-semibold mb-3 text-white">Programming Languages</h3>
-                        <div class="space-y-3">
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">JavaScript</span>
-                                <span class="text-green-400 font-semibold">95%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">TypeScript</span>
-                                <span class="text-green-400 font-semibold">90%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">Python</span>
-                                <span class="text-green-400 font-semibold">85%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">Java</span>
-                                <span class="text-yellow-400 font-semibold">75%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">C#</span>
-                                <span class="text-yellow-400 font-semibold">70%</span>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+        </footer>
 
-                    <!-- Frontend Frameworks -->
-                    <div class="glass-effect p-6 rounded-xl">
-                        <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-lg font-semibold mb-3 text-white">Frontend Frameworks</h3>
-                        <div class="space-y-3">
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">React</span>
-                                <span class="text-green-400 font-semibold">95%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">Next.js</span>
-                                <span class="text-green-400 font-semibold">90%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">Vue.js</span>
-                                <span class="text-green-400 font-semibold">85%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">Angular</span>
-                                <span class="text-yellow-400 font-semibold">75%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">Svelte</span>
-                                <span class="text-yellow-400 font-semibold">65%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Backend Technologies -->
-                    <div class="glass-effect p-6 rounded-xl">
-                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-lg font-semibold mb-3 text-white">Backend Technologies</h3>
-                        <div class="space-y-3">
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">Node.js</span>
-                                <span class="text-green-400 font-semibold">90%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">Express.js</span>
-                                <span class="text-green-400 font-semibold">90%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">NestJS</span>
-                                <span class="text-green-400 font-semibold">85%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">Django</span>
-                                <span class="text-yellow-400 font-semibold">80%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">FastAPI</span>
-                                <span class="text-yellow-400 font-semibold">75%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Databases -->
-                    <div class="glass-effect p-6 rounded-xl">
-                        <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z"></path>
-                                <path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z"></path>
-                                <path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-lg font-semibold mb-3 text-white">Databases</h3>
-                        <div class="space-y-3">
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">MongoDB</span>
-                                <span class="text-green-400 font-semibold">90%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">PostgreSQL</span>
-                                <span class="text-green-400 font-semibold">85%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">MySQL</span>
-                                <span class="text-green-400 font-semibold">80%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">Redis</span>
-                                <span class="text-yellow-400 font-semibold">75%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">Firebase</span>
-                                <span class="text-yellow-400 font-semibold">80%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Cloud & DevOps -->
-                    <div class="glass-effect p-6 rounded-xl">
-                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-lg font-semibold mb-3 text-white">Cloud & DevOps</h3>
-                        <div class="space-y-3">
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">AWS</span>
-                                <span class="text-green-400 font-semibold">85%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">Docker</span>
-                                <span class="text-green-400 font-semibold">85%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">Kubernetes</span>
-                                <span class="text-yellow-400 font-semibold">70%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">CI/CD</span>
-                                <span class="text-yellow-400 font-semibold">80%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">Terraform</span>
-                                <span class="text-yellow-400 font-semibold">65%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Mobile Development -->
-                    <div class="glass-effect p-6 rounded-xl">
-                        <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zM8 5a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1zm1 9a1 1 0 100 2h2a1 1 0 100-2H9z" clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-lg font-semibold mb-3 text-white">Mobile Development</h3>
-                        <div class="space-y-3">
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">React Native</span>
-                                <span class="text-green-400 font-semibold">85%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">Flutter</span>
-                                <span class="text-yellow-400 font-semibold">70%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">Expo</span>
-                                <span class="text-green-400 font-semibold">80%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">Ionic</span>
-                                <span class="text-yellow-400 font-semibold">65%</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-300">PWA</span>
-                                <span class="text-green-400 font-semibold">85%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Additional Skills -->
-                <div class="mt-8 grid md:grid-cols-2 gap-6">
-                    <div class="glass-effect p-6 rounded-xl">
-                        <h3 class="text-lg font-semibold mb-4 text-white">Design & UI/UX</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-pink-600/20 border border-pink-500/30 rounded-full text-pink-300 text-sm">Figma</span>
-                            <span class="px-3 py-1 bg-purple-600/20 border border-purple-500/30 rounded-full text-purple-300 text-sm">Adobe XD</span>
-                            <span class="px-3 py-1 bg-blue-600/20 border border-blue-500/30 rounded-full text-blue-300 text-sm">Tailwind CSS</span>
-                            <span class="px-3 py-1 bg-green-600/20 border border-green-500/30 rounded-full text-green-300 text-sm">Material-UI</span>
-                            <span class="px-3 py-1 bg-indigo-600/20 border border-indigo-500/30 rounded-full text-indigo-300 text-sm">Chakra UI</span>
-                        </div>
-                    </div>
-                    
-                    <div class="glass-effect p-6 rounded-xl">
-                        <h3 class="text-lg font-semibold mb-4 text-white">Tools & Others</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-orange-600/20 border border-orange-500/30 rounded-full text-orange-300 text-sm">Git</span>
-                            <span class="px-3 py-1 bg-gray-600/20 border border-gray-500/30 rounded-full text-gray-300 text-sm">GitHub</span>
-                            <span class="px-3 py-1 bg-blue-600/20 border border-blue-500/30 rounded-full text-blue-300 text-sm">VS Code</span>
-                            <span class="px-3 py-1 bg-red-600/20 border border-red-500/30 rounded-full text-red-300 text-sm">Postman</span>
-                            <span class="px-3 py-1 bg-yellow-600/20 border border-yellow-500/30 rounded-full text-yellow-300 text-sm">Webpack</span>
-                            <span class="px-3 py-1 bg-green-600/20 border border-green-500/30 rounded-full text-green-300 text-sm">Jest</span>
-                        </div>
+        <!-- Project Details Modal -->
+        <div id="projectModal" class="modal">
+            <div class="modal-content">
+                <div class="p-6 md:p-8">
+                    <button onclick="closeModal()" class="absolute top-4 right-4 text-2xl text-slate-400 hover:text-white z-10">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div id="modalContent">
+                        <!-- Modal content will be inserted here -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Project Modals -->
-    <div id="projectModal" class="modal">
-        <div class="modal-content w-full max-w-4xl mx-4">
-            <button class="close-modal" onclick="closeProjectModal()">×</button>
-            <div id="modalContent" class="p-8">
-                <!-- Dynamic content will be inserted here -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <p class="text-gray-400">
-                    © 2024 Alex Morgan. Crafted with ❤️ and lots of ☕
-                </p>
-            </div>
-        </div>
-    </footer>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        // Global variables
+        let portfolioData = null;
+        let activeFilters = {
+            company: [],
+            skill: [],
+            category: []
+        };
+        let allProjects = [];
 
-        // Smooth scrolling
-        function scrollToSection(sectionId) {
-            const element = document.getElementById(sectionId);
-            const navHeight = 64;
-            const elementPosition = element.offsetTop - navHeight;
-            
-            window.scrollTo({
-                top: elementPosition,
-                behavior: 'smooth'
-            });
+        // DOM elements
+        const loadingElement = document.getElementById('loading');
+        const mainContentElement = document.getElementById('mainContent');
+
+        // Load JSON data
+        async function loadPortfolioData() {
+            try {
+                const response = await fetch('data.json');
+                portfolioData = await response.json();
+                initializePortfolio();
+            } catch (error) {
+                console.error('Error loading portfolio data:', error);
+                portfolioData = getDefaultData();
+                initializePortfolio();
+            }
         }
 
-        // Navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const sectionId = this.getAttribute('href').substring(1);
-                scrollToSection(sectionId);
-                mobileMenu.classList.add('hidden');
-            });
-        });
+        // Default data in case JSON fails to load
+        function getDefaultData() {
+            return {
+                personal: {
+                    name: "Asad Ali",
+                    title: "Full Stack Developer & IT Consultant",
+                    position: "Junior Programmer UOBS",
+                    location: "Gilgit Baltistan, Pakistan",
+                    phone: "+923449113577",
+                    emails: ["info.alitechdev@gmail.com", "asad07538@gmail.com"],
+                    linkedin: "www.linkedin.com/in/asad07538",
+                    portfolio: "https://infoalitech.github.io/",
+                    summary: "I am a passionate Web Developer with 5+ years of experience...",
+                    stats: { experience: "5+", projects: "50+", clients: "30+" }
+                }
+            };
+        }
 
-
-
-        // Parallax effect
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.parallax');
+        // Initialize portfolio with loaded data
+        function initializePortfolio() {
+            // Hide loading screen and show main content
+            loadingElement.style.display = 'none';
+            mainContentElement.style.display = 'block';
             
-            parallaxElements.forEach(element => {
-                const speed = element.dataset.speed || 0.5;
-                const yPos = -(scrolled * speed);
-                element.style.transform = `translateY(${yPos}px)`;
-            });
-        });
+            // Populate all sections
+            populateHeroSection();
+            populateAboutSection();
+            populateSkillsSection();
+            populateProjectsSection();
+            populateExperienceSection();
+            populateContactSection();
+            setupEventListeners();
+            
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Store all projects
+            if (portfolioData.projects && portfolioData.projects.all) {
+                allProjects = portfolioData.projects.all;
+            }
+        }
 
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        // Populate Hero Section
+        function populateHeroSection() {
+            const personal = portfolioData.personal;
+            
+            // Set basic info
+            document.getElementById('heroName').textContent = personal.name;
+            document.getElementById('heroTitle').textContent = personal.title;
+            document.getElementById('profileName').textContent = personal.name;
+            document.getElementById('heroDescription').textContent = "Transforming ideas into powerful digital solutions. Specialized in modern web technologies, cloud infrastructure, and enterprise-grade applications.";
+            
+            // Set stats
+            const statsContainer = document.getElementById('statsContainer');
+            const stats = personal.stats;
+            
+            statsContainer.innerHTML = `
+                <div class="text-center">
+                    <div class="text-3xl font-bold gradient-text">${stats.experience}</div>
+                    <div class="text-sm text-slate-400">Years Experience</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold gradient-text">${stats.projects}</div>
+                    <div class="text-sm text-slate-400">Projects Done</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold gradient-text">${stats.clients}</div>
+                    <div class="text-sm text-slate-400">Happy Clients</div>
+                </div>
+            `;
+            
+            // Set tech highlights
+            const techHighlights = document.getElementById('techHighlights');
+            techHighlights.innerHTML = `
+                <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+                    <span class="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-300 text-sm">React & Next.js</span>
+                    <span class="px-3 py-1 bg-green-500/20 border border-green-500/30 rounded-full text-green-300 text-sm">Node.js</span>
+                    <span class="px-3 py-1 bg-yellow-500/20 border border-yellow-500/30 rounded-full text-yellow-300 text-sm">Python</span>
+                    <span class="px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-purple-300 text-sm">AWS</span>
+                    <span class="px-3 py-1 bg-red-500/20 border border-red-500/30 rounded-full text-red-300 text-sm">Docker</span>
+                    <span class="px-3 py-1 bg-emerald-500/20 border border-emerald-500/30 rounded-full text-emerald-300 text-sm">MongoDB</span>
+                </div>
+            `;
+        }
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
+        // Populate About Section
+        function populateAboutSection() {
+            const personal = portfolioData.personal;
+            
+            // Set summary
+            document.getElementById('aboutSummary').textContent = personal.summary;
+            
+            // Set personal info
+            const personalInfo = document.getElementById('personalInfo');
+            personalInfo.innerHTML = `
+                <div class="flex items-center">
+                    <i class="fas fa-user text-slate-400 w-6 mr-3"></i>
+                    <span>${personal.name}</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-briefcase text-slate-400 w-6 mr-3"></i>
+                    <span>${personal.position}</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-map-marker-alt text-slate-400 w-6 mr-3"></i>
+                    <span>${personal.location}</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-phone text-slate-400 w-6 mr-3"></i>
+                    <span>${personal.phone}</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-envelope text-slate-400 w-6 mr-3"></i>
+                    <span>${personal.emails[0]}</span>
+                </div>
+            `;
+            
+            // Set education
+            const educationList = document.getElementById('educationList');
+            if (portfolioData.education) {
+                educationList.innerHTML = portfolioData.education.map(edu => `
+                    <div class="mb-4">
+                        <h4 class="font-bold text-lg">${edu.degree}</h4>
+                        <p class="text-slate-400">${edu.institution} • ${edu.period}</p>
+                        ${edu.achievement ? `<p class="text-yellow-400 text-sm mt-1"><i class="fas fa-award mr-2"></i>${edu.achievement}</p>` : ''}
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Populate Skills Section
+        function populateSkillsSection() {
+            const skillsContainer = document.getElementById('skillsContainer');
+            const skills = portfolioData.skills;
+            
+            if (!skills) return;
+            
+            let skillsHTML = '';
+            
+            // Frontend Skills
+            if (skills.frontend && skills.frontend.length > 0) {
+                skillsHTML += `
+                    <div class="mb-12">
+                        <h3 class="text-2xl font-bold mb-6 gradient-text">Frontend Development</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            ${skills.frontend.map(skill => `
+                                <div class="dark-glass p-6 rounded-xl card-hover">
+                                    <div class="flex items-center mb-4">
+                                        <div class="w-12 h-12 ${skill.color || 'bg-blue-500'} rounded-lg flex items-center justify-center mr-4">
+                                            <i class="fas fa-code text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-lg">${skill.name}</h4>
+                                            <p class="text-slate-400 text-sm">${skill.category}</p>
+                                        </div>
+                                    </div>
+                                    <div class="skill-bar bg-slate-700">
+                                        <div class="skill-progress" style="width: ${skill.level}%"></div>
+                                    </div>
+                                    <div class="text-right mt-2">
+                                        <span class="text-sm font-medium">${skill.level}%</span>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // Backend Skills
+            if (skills.backend && skills.backend.length > 0) {
+                skillsHTML += `
+                    <div class="mb-12">
+                        <h3 class="text-2xl font-bold mb-6 gradient-text">Backend Development</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            ${skills.backend.map(skill => `
+                                <div class="dark-glass p-6 rounded-xl card-hover">
+                                    <div class="flex items-center mb-4">
+                                        <div class="w-12 h-12 ${skill.color || 'bg-green-500'} rounded-lg flex items-center justify-center mr-4">
+                                            <i class="fas fa-server text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-lg">${skill.name}</h4>
+                                            <p class="text-slate-400 text-sm">${skill.category}</p>
+                                        </div>
+                                    </div>
+                                    <div class="skill-bar bg-slate-700">
+                                        <div class="skill-progress" style="width: ${skill.level}%"></div>
+                                    </div>
+                                    <div class="text-right mt-2">
+                                        <span class="text-sm font-medium">${skill.level}%</span>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // E-commerce Skills
+            if (skills.ecommerce && skills.ecommerce.length > 0) {
+                skillsHTML += `
+                    <div class="mb-12">
+                        <h3 class="text-2xl font-bold mb-6 gradient-text">E-commerce Platforms</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            ${skills.ecommerce.map(skill => `
+                                <div class="dark-glass p-6 rounded-xl card-hover">
+                                    <div class="flex items-center mb-4">
+                                        <div class="w-12 h-12 ${skill.color || 'bg-orange-500'} rounded-lg flex items-center justify-center mr-4">
+                                            <i class="fas fa-shopping-cart text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-lg">${skill.name}</h4>
+                                            <p class="text-slate-400 text-sm">${skill.category}</p>
+                                        </div>
+                                    </div>
+                                    <div class="skill-bar bg-slate-700">
+                                        <div class="skill-progress" style="width: ${skill.level}%"></div>
+                                    </div>
+                                    <div class="text-right mt-2">
+                                        <span class="text-sm font-medium">${skill.level}%</span>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // Other Skills
+            if (skills.other && skills.other.length > 0) {
+                skillsHTML += `
+                    <div class="mb-12">
+                        <h3 class="text-2xl font-bold mb-6 gradient-text">Tools & Others</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            ${skills.other.map(skill => `
+                                <div class="dark-glass p-6 rounded-xl card-hover">
+                                    <div class="flex items-center mb-4">
+                                        <div class="w-12 h-12 ${skill.color || 'bg-purple-500'} rounded-lg flex items-center justify-center mr-4">
+                                            <i class="fas fa-tools text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-lg">${skill.name}</h4>
+                                            <p class="text-slate-400 text-sm">${skill.category}</p>
+                                        </div>
+                                    </div>
+                                    <div class="skill-bar bg-slate-700">
+                                        <div class="skill-progress" style="width: ${skill.level}%"></div>
+                                    </div>
+                                    <div class="text-right mt-2">
+                                        <span class="text-sm font-medium">${skill.level}%</span>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            skillsContainer.innerHTML = skillsHTML;
+            
+            // Animate skill bars
+            setTimeout(() => {
+                document.querySelectorAll('.skill-progress').forEach(bar => {
+                    bar.style.transition = 'width 1.5s ease-in-out';
+                });
+            }, 500);
+        }
+
+        // Populate Projects Section with Filters
+        function populateProjectsSection() {
+            const projects = portfolioData.projects;
+            
+            if (!projects || !projects.all) return;
+            
+            // Create filter buttons for companies
+            const companyFilters = document.getElementById('companyFilters');
+            if (projects.companies && projects.companies.length > 0) {
+                companyFilters.innerHTML = `
+                    <button onclick="toggleFilter('company', 'all')" class="filter-btn active">
+                        All Companies
+                    </button>
+                    ${projects.companies.map(company => `
+                        <button onclick="toggleFilter('company', '${company}')" class="filter-btn">
+                            ${company}
+                        </button>
+                    `).join('')}
+                `;
+            }
+            
+            // Create filter buttons for categories
+            const categoryFilters = document.getElementById('categoryFilters');
+            if (projects.categories && projects.categories.length > 0) {
+                categoryFilters.innerHTML = `
+                    <button onclick="toggleFilter('category', 'all')" class="filter-btn active">
+                        All Categories
+                    </button>
+                    ${projects.categories.map(category => `
+                        <button onclick="toggleFilter('category', '${category}')" class="filter-btn">
+                            ${category}
+                        </button>
+                    `).join('')}
+                `;
+            }
+            
+            // Create filter buttons for skills
+            const skillFilters = document.getElementById('skillFilters');
+            // Get all unique skills from projects
+            const allSkills = new Set();
+            projects.all.forEach(project => {
+                if (project.skills) {
+                    project.skills.forEach(skill => allSkills.add(skill));
                 }
             });
-        }, observerOptions);
-
-        // Observe all animated elements
-        document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in').forEach(el => {
-            el.style.animationPlayState = 'paused';
-            observer.observe(el);
-        });
-
-        // Active navigation highlighting
-        window.addEventListener('scroll', () => {
-            const sections = ['home', 'about', 'skills', 'projects', 'contact'];
-            const navHeight = 64;
             
-            sections.forEach(sectionId => {
-                const section = document.getElementById(sectionId);
-                if (section) {
-                    const sectionTop = section.offsetTop - navHeight - 100;
-                    const sectionBottom = sectionTop + section.offsetHeight;
-                    const scrollPosition = window.scrollY;
+            if (allSkills.size > 0) {
+                const skillsArray = Array.from(allSkills).sort();
+                skillFilters.innerHTML = `
+                    <button onclick="toggleFilter('skill', 'all')" class="skill-filter-btn active">
+                        All Technologies
+                    </button>
+                    ${skillsArray.map(skill => `
+                        <button onclick="toggleFilter('skill', '${skill}')" class="skill-filter-btn">
+                            ${skill}
+                        </button>
+                    `).join('')}
+                `;
+            }
+            
+            // Render all projects initially
+            renderFilteredProjects();
+        }
+
+        // Toggle filter function
+        function toggleFilter(type, value) {
+            const filterButtons = document.querySelectorAll(`#${type}Filters button`);
+            
+            if (value === 'all') {
+                // Clear all filters of this type
+                activeFilters[type] = [];
+                
+                // Update button states
+                filterButtons.forEach(btn => {
+                    if (btn.textContent.trim() === 'All Companies' || 
+                        btn.textContent.trim() === 'All Categories' ||
+                        btn.textContent.trim() === 'All Technologies') {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            } else {
+                // Toggle this specific filter
+                const index = activeFilters[type].indexOf(value);
+                
+                if (index === -1) {
+                    // Add filter
+                    activeFilters[type].push(value);
                     
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                        document.querySelectorAll('nav a').forEach(link => {
-                            link.classList.remove('text-white');
-                            link.classList.add('text-gray-300');
-                        });
-                        
-                        const activeLink = document.querySelector(`nav a[href="#${sectionId}"]`);
-                        if (activeLink) {
-                            activeLink.classList.remove('text-gray-300');
-                            activeLink.classList.add('text-white');
+                    // Remove "all" from this type
+                    activeFilters[type] = activeFilters[type].filter(item => item !== 'all');
+                    
+                    // Update button states
+                    filterButtons.forEach(btn => {
+                        if (btn.textContent.trim() === value) {
+                            btn.classList.add('active');
+                        } else if (btn.textContent.trim() === 'All Companies' || 
+                                  btn.textContent.trim() === 'All Categories' ||
+                                  btn.textContent.trim() === 'All Technologies') {
+                            btn.classList.remove('active');
                         }
+                    });
+                } else {
+                    // Remove filter
+                    activeFilters[type].splice(index, 1);
+                    
+                    // If no filters left, show all
+                    if (activeFilters[type].length === 0) {
+                        activeFilters[type].push('all');
+                        
+                        // Update button states
+                        filterButtons.forEach(btn => {
+                            if (btn.textContent.trim() === 'All Companies' || 
+                                btn.textContent.trim() === 'All Categories' ||
+                                btn.textContent.trim() === 'All Technologies') {
+                                btn.classList.add('active');
+                            } else {
+                                btn.classList.remove('active');
+                            }
+                        });
+                    } else {
+                        // Update button state
+                        filterButtons.forEach(btn => {
+                            if (btn.textContent.trim() === value) {
+                                btn.classList.remove('active');
+                            }
+                        });
                     }
                 }
-            });
-        });
-
-        // Project Modal Functionality
-        const projectData = {
-            project1: {
-                title: "E-Commerce Platform",
-                subtitle: "Full-Stack Web Application",
-                description: "A comprehensive e-commerce solution built with modern web technologies. Features include user authentication, product catalog, shopping cart, payment processing with Stripe, order management, and admin dashboard.",
-                longDescription: "This project showcases a complete e-commerce ecosystem with both customer-facing and administrative interfaces. The platform handles everything from product browsing to secure payment processing, inventory management, and order fulfillment. Built with scalability in mind, it can handle thousands of concurrent users and products.",
-                image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop",
-                technologies: [
-                    { name: "React", color: "bg-blue-600" },
-                    { name: "Node.js", color: "bg-green-600" },
-                    { name: "MongoDB", color: "bg-green-700" },
-                    { name: "Stripe API", color: "bg-purple-600" },
-                    { name: "JWT Auth", color: "bg-orange-600" },
-                    { name: "AWS S3", color: "bg-yellow-600" }
-                ],
-                features: [
-                    "User Authentication & Authorization",
-                    "Product Catalog with Search & Filters",
-                    "Shopping Cart & Wishlist",
-                    "Secure Payment Processing",
-                    "Order Tracking & History",
-                    "Admin Dashboard",
-                    "Inventory Management",
-                    "Email Notifications"
-                ],
-                challenges: [
-                    "Implementing secure payment processing",
-                    "Optimizing database queries for large product catalogs",
-                    "Building responsive design for all devices",
-                    "Ensuring data security and user privacy"
-                ],
-                liveUrl: "https://example-ecommerce.com",
-                githubUrl: "https://github.com/example/ecommerce"
-            },
-            project2: {
-                title: "Analytics Dashboard",
-                subtitle: "Data Visualization Platform",
-                description: "Real-time analytics dashboard with interactive charts, data visualization, and business intelligence features. Built for enterprise-level data processing and insights.",
-                longDescription: "A powerful analytics platform that transforms raw data into actionable insights. Features real-time data processing, interactive visualizations, custom report generation, and advanced filtering capabilities. Designed to handle large datasets and provide instant insights for business decision-making.",
-                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
-                technologies: [
-                    { name: "Vue.js", color: "bg-green-600" },
-                    { name: "D3.js", color: "bg-orange-600" },
-                    { name: "Python", color: "bg-blue-600" },
-                    { name: "FastAPI", color: "bg-teal-600" },
-                    { name: "PostgreSQL", color: "bg-blue-700" },
-                    { name: "Redis", color: "bg-red-600" }
-                ],
-                features: [
-                    "Real-time Data Processing",
-                    "Interactive Charts & Graphs",
-                    "Custom Dashboard Creation",
-                    "Advanced Filtering & Search",
-                    "Export to PDF/Excel",
-                    "User Role Management",
-                    "API Integration",
-                    "Mobile Responsive Design"
-                ],
-                challenges: [
-                    "Handling large datasets efficiently",
-                    "Creating smooth real-time updates",
-                    "Optimizing chart rendering performance",
-                    "Building intuitive user interface"
-                ],
-                liveUrl: "https://example-analytics.com",
-                githubUrl: "https://github.com/example/analytics"
-            },
-            project3: {
-                title: "Task Management App",
-                subtitle: "Mobile & Web Application",
-                description: "Collaborative task management application with real-time updates, team collaboration features, and cross-platform synchronization.",
-                longDescription: "A comprehensive task management solution that enables teams to collaborate effectively. Features include project organization, task assignment, progress tracking, file sharing, and real-time notifications. Built with React Native for mobile and React for web to ensure seamless cross-platform experience.",
-                image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=400&fit=crop",
-                technologies: [
-                    { name: "React Native", color: "bg-blue-600" },
-                    { name: "React", color: "bg-blue-500" },
-                    { name: "Firebase", color: "bg-orange-600" },
-                    { name: "Redux", color: "bg-purple-600" },
-                    { name: "Node.js", color: "bg-green-600" },
-                    { name: "Socket.io", color: "bg-gray-600" }
-                ],
-                features: [
-                    "Cross-platform Synchronization",
-                    "Real-time Collaboration",
-                    "Project & Task Organization",
-                    "File Sharing & Comments",
-                    "Push Notifications",
-                    "Offline Mode Support",
-                    "Time Tracking",
-                    "Team Management"
-                ],
-                challenges: [
-                    "Implementing real-time synchronization",
-                    "Optimizing for mobile performance",
-                    "Handling offline functionality",
-                    "Creating intuitive user experience"
-                ],
-                liveUrl: "https://example-tasks.com",
-                githubUrl: "https://github.com/example/taskmanager"
-            },
-            project4: {
-                title: "Cloud Storage Solution",
-                subtitle: "Enterprise File Management",
-                description: "Secure cloud storage platform with advanced file management, sharing capabilities, and enterprise-grade security features.",
-                longDescription: "An enterprise-grade cloud storage solution that provides secure file storage, sharing, and collaboration features. Built with microservices architecture and deployed on AWS with auto-scaling capabilities. Features include end-to-end encryption, version control, and advanced permission management.",
-                image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&h=400&fit=crop",
-                technologies: [
-                    { name: "AWS", color: "bg-orange-500" },
-                    { name: "Docker", color: "bg-blue-600" },
-                    { name: "Kubernetes", color: "bg-blue-700" },
-                    { name: "Node.js", color: "bg-green-600" },
-                    { name: "React", color: "bg-blue-500" },
-                    { name: "MongoDB", color: "bg-green-700" }
-                ],
-                features: [
-                    "Secure File Storage & Encryption",
-                    "Advanced Sharing & Permissions",
-                    "Version Control & History",
-                    "Collaborative Editing",
-                    "API Integration",
-                    "Auto-scaling Infrastructure",
-                    "Backup & Recovery",
-                    "Audit Logging"
-                ],
-                challenges: [
-                    "Implementing end-to-end encryption",
-                    "Building scalable architecture",
-                    "Ensuring data security compliance",
-                    "Optimizing file upload/download speeds"
-                ],
-                liveUrl: "https://example-storage.com",
-                githubUrl: "https://github.com/example/cloudstorage"
-            },
-            project5: {
-                title: "AI Chat Assistant",
-                subtitle: "Machine Learning Application",
-                description: "Intelligent chatbot powered by natural language processing and machine learning algorithms for customer support and engagement.",
-                longDescription: "An advanced AI-powered chatbot that uses natural language processing and machine learning to provide intelligent customer support. Features include intent recognition, context awareness, multi-language support, and continuous learning capabilities. Integrated with popular messaging platforms and CRM systems.",
-                image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&h=400&fit=crop",
-                technologies: [
-                    { name: "Python", color: "bg-blue-600" },
-                    { name: "TensorFlow", color: "bg-orange-600" },
-                    { name: "FastAPI", color: "bg-teal-600" },
-                    { name: "NLTK", color: "bg-green-600" },
-                    { name: "Redis", color: "bg-red-600" },
-                    { name: "Docker", color: "bg-blue-700" }
-                ],
-                features: [
-                    "Natural Language Processing",
-                    "Intent Recognition & Classification",
-                    "Context-aware Conversations",
-                    "Multi-language Support",
-                    "Integration with CRM Systems",
-                    "Analytics & Reporting",
-                    "Continuous Learning",
-                    "API & Webhook Support"
-                ],
-                challenges: [
-                    "Training accurate NLP models",
-                    "Handling context in conversations",
-                    "Optimizing response times",
-                    "Implementing continuous learning"
-                ],
-                liveUrl: "https://example-chatbot.com",
-                githubUrl: "https://github.com/example/aichatbot"
-            },
-            project6: {
-                title: "Learning Platform",
-                subtitle: "Educational Technology",
-                description: "Interactive online learning platform with video streaming, progress tracking, and comprehensive course management features.",
-                longDescription: "A comprehensive e-learning platform that provides interactive courses, video streaming, progress tracking, and assessment tools. Features include course creation tools for instructors, student progress analytics, discussion forums, and mobile-responsive design. Built to scale for thousands of concurrent users.",
-                image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=400&fit=crop",
-                technologies: [
-                    { name: "Angular", color: "bg-red-600" },
-                    { name: "NestJS", color: "bg-red-700" },
-                    { name: "PostgreSQL", color: "bg-blue-700" },
-                    { name: "AWS CloudFront", color: "bg-orange-500" },
-                    { name: "WebRTC", color: "bg-green-600" },
-                    { name: "TypeScript", color: "bg-blue-600" }
-                ],
-                features: [
-                    "Interactive Course Creation",
-                    "HD Video Streaming",
-                    "Progress Tracking & Analytics",
-                    "Discussion Forums",
-                    "Assessment & Quizzes",
-                    "Certificate Generation",
-                    "Mobile App Support",
-                    "Instructor Dashboard"
-                ],
-                challenges: [
-                    "Implementing smooth video streaming",
-                    "Building scalable course structure",
-                    "Creating engaging user interface",
-                    "Optimizing for mobile devices"
-                ],
-                liveUrl: "https://example-learning.com",
-                githubUrl: "https://github.com/example/learningplatform"
             }
-        };
+            
+            // Update active filters display
+            updateActiveFiltersDisplay();
+            
+            // Render filtered projects
+            renderFilteredProjects();
+        }
 
+        // Update active filters display
+        function updateActiveFiltersDisplay() {
+            const activeFiltersContainer = document.getElementById('activeFilters');
+            let activeFiltersHTML = '';
+            
+            // Add company filters
+            activeFilters.company.forEach(filter => {
+                if (filter !== 'all') {
+                    activeFiltersHTML += `
+                        <div class="flex items-center bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm">
+                            ${filter}
+                            <button onclick="removeFilter('company', '${filter}')" class="ml-2 text-xs">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    `;
+                }
+            });
+            
+            // Add skill filters
+            activeFilters.skill.forEach(filter => {
+                if (filter !== 'all') {
+                    activeFiltersHTML += `
+                        <div class="flex items-center bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-sm">
+                            ${filter}
+                            <button onclick="removeFilter('skill', '${filter}')" class="ml-2 text-xs">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    `;
+                }
+            });
+            
+            // Add category filters
+            activeFilters.category.forEach(filter => {
+                if (filter !== 'all') {
+                    activeFiltersHTML += `
+                        <div class="flex items-center bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm">
+                            ${filter}
+                            <button onclick="removeFilter('category', '${filter}')" class="ml-2 text-xs">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    `;
+                }
+            });
+            
+            activeFiltersContainer.innerHTML = activeFiltersHTML;
+        }
+
+        // Remove specific filter
+        function removeFilter(type, value) {
+            const index = activeFilters[type].indexOf(value);
+            if (index !== -1) {
+                activeFilters[type].splice(index, 1);
+                
+                // If no filters left, show all
+                if (activeFilters[type].length === 0) {
+                    activeFilters[type].push('all');
+                    
+                    // Update button states
+                    const filterButtons = document.querySelectorAll(`#${type}Filters button`);
+                    filterButtons.forEach(btn => {
+                        if (btn.textContent.trim() === 'All Companies' || 
+                            btn.textContent.trim() === 'All Categories' ||
+                            btn.textContent.trim() === 'All Technologies') {
+                            btn.classList.add('active');
+                        } else {
+                            btn.classList.remove('active');
+                        }
+                    });
+                } else {
+                    // Update button state
+                    const filterButtons = document.querySelectorAll(`#${type}Filters button`);
+                    filterButtons.forEach(btn => {
+                        if (btn.textContent.trim() === value) {
+                            btn.classList.remove('active');
+                        }
+                    });
+                }
+                
+                // Update display and render
+                updateActiveFiltersDisplay();
+                renderFilteredProjects();
+            }
+        }
+
+        // Clear all filters
+        function clearAllFilters() {
+            activeFilters = {
+                company: ['all'],
+                skill: ['all'],
+                category: ['all']
+            };
+            
+            // Update all filter buttons
+            document.querySelectorAll('#companyFilters button, #skillFilters button, #categoryFilters button').forEach(btn => {
+                if (btn.textContent.trim() === 'All Companies' || 
+                    btn.textContent.trim() === 'All Categories' ||
+                    btn.textContent.trim() === 'All Technologies') {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            updateActiveFiltersDisplay();
+            renderFilteredProjects();
+        }
+
+        // Render filtered projects
+        function renderFilteredProjects() {
+            const projectsContainer = document.getElementById('projectsContainer');
+            const noResultsElement = document.getElementById('noResults');
+            
+            if (!allProjects || allProjects.length === 0) {
+                projectsContainer.innerHTML = '';
+                noResultsElement.classList.remove('hidden');
+                return;
+            }
+            
+            // Filter projects based on active filters
+            let filteredProjects = allProjects.filter(project => {
+                // Company filter
+                if (!activeFilters.company.includes('all') && activeFilters.company.length > 0) {
+                    if (!activeFilters.company.includes(project.company)) {
+                        return false;
+                    }
+                }
+                
+                // Category filter
+                if (!activeFilters.category.includes('all') && activeFilters.category.length > 0) {
+                    if (!activeFilters.category.includes(project.category)) {
+                        return false;
+                    }
+                }
+                
+                // Skill filter
+                if (!activeFilters.skill.includes('all') && activeFilters.skill.length > 0) {
+                    const hasSkill = activeFilters.skill.some(skill => 
+                        project.skills && project.skills.includes(skill)
+                    );
+                    if (!hasSkill) {
+                        return false;
+                    }
+                }
+                
+                return true;
+            });
+            
+            // Check if any filters are active
+            const hasActiveFilters = 
+                (!activeFilters.company.includes('all') && activeFilters.company.length > 0) ||
+                (!activeFilters.category.includes('all') && activeFilters.category.length > 0) ||
+                (!activeFilters.skill.includes('all') && activeFilters.skill.length > 0);
+            
+            // Show/hide no results message
+            if (filteredProjects.length === 0) {
+                projectsContainer.innerHTML = '';
+                noResultsElement.classList.remove('hidden');
+            } else {
+                noResultsElement.classList.add('hidden');
+                
+                // Render filtered projects
+                projectsContainer.innerHTML = filteredProjects.map(project => `
+                    <div class="project-card dark-glass p-6 rounded-xl card-hover">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <span class="company-badge mb-2">${project.company}</span>
+                                <h3 class="text-xl font-bold">${project.title}</h3>
+                            </div>
+                            <span class="text-sm text-slate-400">${project.year}</span>
+                        </div>
+                        
+                        <p class="text-slate-400 mb-4 flex-grow">${project.description}</p>
+                        
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-1">
+                                ${project.technologies.slice(0, 3).map(tech => `
+                                    <span class="project-tag bg-blue-500/20 text-blue-300">${tech}</span>
+                                `).join('')}
+                                ${project.technologies.length > 3 ? `
+                                    <span class="project-tag bg-slate-700 text-slate-300">+${project.technologies.length - 3}</span>
+                                ` : ''}
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center mt-4 pt-4 border-t border-slate-700">
+                            <div class="text-sm text-slate-400">
+                                <i class="fas fa-folder mr-1"></i> ${project.category}
+                            </div>
+                            <button onclick="openProjectModal('${project.id}')" class="text-sm gradient-bg px-4 py-2 rounded-lg font-medium hover:opacity-90 transition">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Open project modal with full details
         function openProjectModal(projectId) {
-            const project = projectData[projectId];
+            const project = allProjects.find(p => p.id === projectId);
             if (!project) return;
-
-            const modal = document.getElementById('projectModal');
+            
             const modalContent = document.getElementById('modalContent');
-
+            const modal = document.getElementById('projectModal');
+            
             modalContent.innerHTML = `
-                <div class="grid lg:grid-cols-2 gap-8">
-                    <!-- Left Column - Media -->
-                    <div class="space-y-6">
-                        <!-- Project Image -->
-                        <div class="relative overflow-hidden rounded-xl">
-                            <img src="${project.image}" alt="${project.title}" 
-                                 class="w-full h-64 object-cover"
-                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="w-full h-64 bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center text-white text-lg" style="display: none;">
-                                Project Preview
+                <div class="mb-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h2 class="text-3xl font-bold mb-2">${project.title}</h2>
+                            <div class="flex items-center space-x-4">
+                                <span class="company-badge">${project.company}</span>
+                                <span class="text-slate-400">${project.year}</span>
+                                ${project.duration ? `<span class="text-slate-400"><i class="far fa-clock mr-1"></i>${project.duration}</span>` : ''}
                             </div>
-                        </div>
-                        
-                        <!-- Video Demo -->
-                        <div class="video-container">
-                            <div class="video-placeholder">
-                                <div class="text-center">
-                                    <svg class="w-16 h-16 mb-4 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <p>Demo Video Coming Soon</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Action Buttons -->
-                        <div class="flex gap-4">
-                            <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" 
-                               class="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold text-center hover:shadow-lg transition-all duration-300">
-                                View Live Demo
-                            </a>
-                            <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" 
-                               class="flex-1 border-2 border-purple-600 text-purple-400 px-6 py-3 rounded-lg font-semibold text-center hover:bg-purple-600 hover:text-white transition-all duration-300">
-                                View Code
-                            </a>
                         </div>
                     </div>
                     
-                    <!-- Right Column - Details -->
-                    <div class="space-y-6">
-                        <!-- Header -->
-                        <div>
-                            <h2 class="text-3xl font-bold text-white mb-2">${project.title}</h2>
-                            <p class="text-purple-400 text-lg font-medium">${project.subtitle}</p>
-                        </div>
-                        
-                        <!-- Description -->
-                        <div>
-                            <h3 class="text-xl font-semibold text-white mb-3">Overview</h3>
-                            <p class="text-gray-300 leading-relaxed mb-4">${project.description}</p>
-                            <p class="text-gray-400 leading-relaxed">${project.longDescription}</p>
-                        </div>
-                        
-                        <!-- Technologies -->
-                        <div>
-                            <h3 class="text-xl font-semibold text-white mb-3">Technologies Used</h3>
-                            <div class="flex flex-wrap gap-2">
-                                ${project.technologies.map(tech => 
-                                    `<span class="tech-tag ${tech.color} text-white">${tech.name}</span>`
-                                ).join('')}
+                    <!-- Project Image -->
+                    <div class="mb-8 rounded-xl overflow-hidden bg-gradient-to-br from-slate-700 to-slate-900 h-64 flex items-center justify-center">
+                        ${project.image ? `
+                            <img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover">
+                        ` : `
+                            <div class="text-center">
+                                <i class="fas fa-project-diagram text-6xl text-slate-600 mb-4"></i>
+                                <p class="text-slate-500">${project.title}</p>
                             </div>
+                        `}
+                    </div>
+                    
+                    <!-- Project Details -->
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Left Column - Main Info -->
+                        <div class="md:col-span-2">
+                            <!-- Description -->
+                            <div class="mb-8">
+                                <h3 class="text-xl font-bold mb-4 gradient-text">Project Description</h3>
+                                <p class="text-slate-300 leading-relaxed">${project.fullDescription || project.description}</p>
+                            </div>
+                            
+                            <!-- Features -->
+                            ${project.features && project.features.length > 0 ? `
+                                <div class="mb-8">
+                                    <h3 class="text-xl font-bold mb-4 gradient-text">Key Features</h3>
+                                    <ul class="grid md:grid-cols-2 gap-2">
+                                        ${project.features.map(feature => `
+                                            <li class="flex items-start text-slate-300">
+                                                <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
+                                                ${feature}
+                                            </li>
+                                        `).join('')}
+                                    </ul>
+                                </div>
+                            ` : ''}
+                            
+                            <!-- Challenges -->
+                            ${project.challenges && project.challenges.length > 0 ? `
+                                <div class="mb-8">
+                                    <h3 class="text-xl font-bold mb-4 gradient-text">Technical Challenges</h3>
+                                    <ul class="space-y-2">
+                                        ${project.challenges.map(challenge => `
+                                            <li class="flex items-start text-slate-300">
+                                                <i class="fas fa-exclamation-triangle text-yellow-400 mr-3 mt-1"></i>
+                                                ${challenge}
+                                            </li>
+                                        `).join('')}
+                                    </ul>
+                                </div>
+                            ` : ''}
                         </div>
                         
-                        <!-- Features -->
+                        <!-- Right Column - Side Info -->
                         <div>
-                            <h3 class="text-xl font-semibold text-white mb-3">Key Features</h3>
-                            <ul class="space-y-2">
-                                ${project.features.map(feature => 
-                                    `<li class="flex items-center text-gray-300">
-                                        <svg class="w-5 h-5 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        ${feature}
-                                    </li>`
-                                ).join('')}
-                            </ul>
-                        </div>
-                        
-                        <!-- Challenges -->
-                        <div>
-                            <h3 class="text-xl font-semibold text-white mb-3">Technical Challenges</h3>
-                            <ul class="space-y-2">
-                                ${project.challenges.map(challenge => 
-                                    `<li class="flex items-start text-gray-300">
-                                        <svg class="w-5 h-5 text-yellow-400 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        ${challenge}
-                                    </li>`
-                                ).join('')}
-                            </ul>
+                            <!-- Technologies -->
+                            <div class="mb-8">
+                                <h3 class="text-xl font-bold mb-4 gradient-text">Technologies Used</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    ${project.technologies.map(tech => `
+                                        <span class="project-tag bg-blue-500/20 text-blue-300">${tech}</span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            
+                            <!-- Skills -->
+                            ${project.skills && project.skills.length > 0 ? `
+                                <div class="mb-8">
+                                    <h3 class="text-xl font-bold mb-4 gradient-text">Skills Applied</h3>
+                                    <div class="flex flex-wrap gap-2">
+                                        ${project.skills.map(skill => `
+                                            <span class="project-tag bg-green-500/20 text-green-300">${skill}</span>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            ` : ''}
+                            
+                            <!-- Tags -->
+                            ${project.tags && project.tags.length > 0 ? `
+                                <div class="mb-8">
+                                    <h3 class="text-xl font-bold mb-4 gradient-text">Project Tags</h3>
+                                    <div class="flex flex-wrap gap-2">
+                                        ${project.tags.map(tag => `
+                                            <span class="project-tag bg-slate-700 text-slate-300">${tag}</span>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            ` : ''}
+                            
+                            <!-- Live Links -->
+                            <div class="mb-8">
+                                <h3 class="text-xl font-bold mb-4 gradient-text">Project Links</h3>
+                                <div class="space-y-3">
+                                    ${project.liveUrl ? `
+                                        <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" 
+                                           class="flex items-center justify-center w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition">
+                                            <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                                        </a>
+                                    ` : `
+                                        <button class="w-full bg-slate-700 text-slate-400 py-3 rounded-lg font-medium cursor-not-allowed">
+                                            <i class="fas fa-external-link-alt mr-2"></i> Live Demo Not Available
+                                        </button>
+                                    `}
+                                    
+                                    ${project.githubUrl ? `
+                                        <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" 
+                                           class="flex items-center justify-center w-full border border-slate-600 text-slate-300 hover:bg-slate-800 py-3 rounded-lg font-medium transition">
+                                            <i class="fab fa-github mr-2"></i> View Code
+                                        </a>
+                                    ` : `
+                                        <button class="w-full border border-slate-700 text-slate-500 py-3 rounded-lg font-medium cursor-not-allowed">
+                                            <i class="fab fa-github mr-2"></i> Code Private
+                                        </button>
+                                    `}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             `;
-
+            
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
 
-        function closeProjectModal() {
+        // Close modal
+        function closeModal() {
             const modal = document.getElementById('projectModal');
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
         }
 
-        // Close modal when clicking outside
-        document.getElementById('projectModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeProjectModal();
-            }
-        });
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeProjectModal();
-                closeSkillsModal();
-            }
-        });
-
-        // Skills Modal Functions
-        function openSkillsModal() {
-            const modal = document.getElementById('skillsModal');
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
+        // Populate Experience Section
+        function populateExperienceSection() {
+            const experienceContainer = document.getElementById('experienceContainer');
+            const experiences = portfolioData.experiences;
+            
+            if (!experiences) return;
+            
+            let experienceHTML = `
+                <div class="max-w-4xl mx-auto">
+                    <div class="relative">
+                        <!-- Timeline line -->
+                        <div class="absolute left-4 md:left-1/2 h-full w-1 bg-gradient-to-b from-purple-500 to-blue-500 transform md:translate-x-1/2"></div>
+            `;
+            
+            experiences.forEach((exp, index) => {
+                const isEven = index % 2 === 0;
+                
+                experienceHTML += `
+                    <div class="relative mb-12 ${isEven ? 'md:text-right md:pr-12' : 'md:pl-12'}">
+                        <!-- Timeline dot -->
+                        <div class="absolute left-2 md:left-1/2 w-4 h-4 gradient-bg rounded-full transform md:translate-x-1/2"></div>
+                        
+                        <div class="ml-12 md:ml-0 ${isEven ? 'md:mr-12' : 'md:ml-12'}">
+                            <div class="dark-glass p-6 rounded-xl card-hover">
+                                <div class="flex flex-col md:flex-row justify-between items-start mb-3">
+                                    <h3 class="text-xl font-bold">${exp.title}</h3>
+                                    <span class="text-purple-400 font-semibold">${exp.period}</span>
+                                </div>
+                                <h4 class="text-lg text-slate-300 mb-3">${exp.company}</h4>
+                                <p class="text-slate-400 mb-4">${exp.description}</p>
+                                <div>
+                                    ${exp.technologies.map(tech => `
+                                        <span class="project-tag bg-purple-500/20 text-purple-300">${tech}</span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            experienceHTML += `
+                    </div>
+                </div>
+            `;
+            
+            experienceContainer.innerHTML = experienceHTML;
         }
 
-        function closeSkillsModal() {
-            const modal = document.getElementById('skillsModal');
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
+
+        // Populate Contact Section
+        function populateContactSection() {
+            const contactInfo = document.getElementById('contactInfo');
+            const personal = portfolioData.personal;
+            
+            contactInfo.innerHTML = `
+                <div class=" grid md:grid-cols-3 gap-12">
+                    <div class="flex items-center">
+                        <i class="fas fa-phone text-slate-400 w-6 mr-3"></i>
+                        <div>
+                            <p class="font-medium">Phone</p>
+                            <p class="text-slate-400">${personal.phone}</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope text-slate-400 w-6 mr-3"></i>
+                        <div>
+                            <p class="font-medium">Email</p>
+                            ${personal.emails.map(email => `<p class="text-slate-400">${email}</p>`).join('')}
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt text-slate-400 w-6 mr-3"></i>
+                        <div>
+                            <p class="font-medium">Location</p>
+                            <p class="text-slate-400">${personal.location}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Set social links
+            const linkedinLink = document.getElementById('linkedinLink');
+            const githubLink = document.getElementById('githubLink');
+            const portfolioLink = document.getElementById('portfolioLink');
+            
+            if (personal.linkedin) {
+                linkedinLink.href = personal.linkedin.startsWith('http') ? personal.linkedin : `https://${personal.linkedin}`;
+            }
+            
+            if (personal.portfolio) {
+                portfolioLink.href = personal.portfolio;
+            }
+            
+            if (personal.github) {
+                githubLink.href = personal.github;
+            } else {
+                githubLink.href = 'https://github.com/infoalitech';
+            }
         }
 
-        // Close skills modal when clicking outside
-        document.getElementById('skillsModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeSkillsModal();
+        // Setup event listeners
+        function setupEventListeners() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('#mobileMenu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+            
+            // Contact form submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Message sent! I will get back to you soon.');
+                    this.reset();
+                });
             }
-        });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const navHeight = document.querySelector('nav').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - navHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Handle modal
+            const modal = document.getElementById('projectModal');
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
+        }
+
+        // Utility functions
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                const navHeight = document.querySelector('nav').offsetHeight;
+                const sectionTop = section.offsetTop - navHeight;
+                
+                window.scrollTo({
+                    top: sectionTop,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+       
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', loadPortfolioData);
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'988a483060bf9083',t:'MTc1OTQ3MTg4NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
